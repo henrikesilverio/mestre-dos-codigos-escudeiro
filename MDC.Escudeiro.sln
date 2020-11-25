@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MDC.Escudeiro", "MDC.Escudeiro.csproj", "{0167B482-113C-4420-A8AF-31EFFECC2D07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MDC.Escudeiro", "MDC.Escudeiro\MDC.Escudeiro.csproj", "{0167B482-113C-4420-A8AF-31EFFECC2D07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDC.Escudeiro.Domain", "..\MDC.Escudeiro.Domain\MDC.Escudeiro.Domain.csproj", "{7B589B65-5B6C-4D2C-A267-D37BD9767164}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDC.Escudeiro.Domain", "MDC.Escudeiro.Domain\MDC.Escudeiro.Domain.csproj", "{7B589B65-5B6C-4D2C-A267-D37BD9767164}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDC.Escudeiro.Exercicio.Console", "..\MDC.Escudeiro.Exercicio.Console\MDC.Escudeiro.Exercicio.Console.csproj", "{E7A25F96-5347-4A1D-A48D-5469E67FD14F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDC.Escudeiro.Exercicio.Console", "MDC.Escudeiro.Exercicio.Console\MDC.Escudeiro.Exercicio.Console.csproj", "{E7A25F96-5347-4A1D-A48D-5469E67FD14F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDC.Escudeiro.Exercicio.Console.Teste", "..\MDC.Escudeiro.Exercicio.Console.Teste\MDC.Escudeiro.Exercicio.Console.Teste.csproj", "{283B4314-6598-46CF-9768-7107CD8EEFD8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDC.Escudeiro.Exercicio.Console.Teste", "MDC.Escudeiro.Exercicio.Console.Teste\MDC.Escudeiro.Exercicio.Console.Teste.csproj", "{283B4314-6598-46CF-9768-7107CD8EEFD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
