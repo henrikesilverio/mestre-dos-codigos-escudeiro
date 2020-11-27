@@ -10,7 +10,7 @@ namespace MDC.Escudeiro.Exercicio.Console
     public class ExercicioNove : AbstractExercise
     {
         private readonly IScreenCommand _screenCommand;
-        private static readonly List<int> _numeros = new List<int>();
+        private readonly List<int> _numeros = new List<int>();
         private int _numero;
 
         public ExercicioNove(IScreenCommand screenCommand)
@@ -20,17 +20,17 @@ namespace MDC.Escudeiro.Exercicio.Console
 
         public void ImprimirTodos()
         {
-            _screenCommand.PrintBigText($"Todos valores inseridos: {string.Join(" | ", _numeros)}");
+            _screenCommand.PrintBigText(string.Format(Text.Resposta_8_0, string.Join(" | ", _numeros)));
         }
 
-        public int[] ObterOrdemCrescente()
+        public string ObterOrdemCrescente()
         {
-            return _numeros.OrderBy(n => n).ToArray();
+            return string.Join(" | ", _numeros.OrderBy(n => n).ToArray());
         }
 
-        public int[] ObterOrdemDecrescente()
+        public string ObterOrdemDecrescente()
         {
-            return _numeros.OrderByDescending(n => n).ToArray();
+            return string.Join(" | ", _numeros.OrderByDescending(n => n).ToArray());
         }
 
         public int ObterPrimeiroNumero()
@@ -67,9 +67,9 @@ namespace MDC.Escudeiro.Exercicio.Console
             _numeros.RemoveAt(_numeros.Count - 1);
         }
 
-        public int[] ObterNumerosPares()
+        public string ObterNumerosPares()
         {
-            return _numeros.Where(n => n % 2 == 0).ToArray();
+            return string.Join(" | ", _numeros.Where(n => n % 2 == 0).ToArray());
         }
 
         public int ConsultarNumero()
@@ -84,118 +84,83 @@ namespace MDC.Escudeiro.Exercicio.Console
             return _numeros.ToArray();
         }
 
-        public void RemoverTodos()
-        {
-            _numeros.Clear();
-        }
-
         public override CommandNode[] GetBranches(CommandNode parent)
         {
-            var commands = new CommandNode[]
+            var commands = new CommandNode[11];
+
+            for (int i = 0; i < commands.Length; i++)
             {
-                new CommandNode
+                commands[i] = new CommandNode
                 {
-                    Action = ImprimirTodos,
+                    Action = GetActions(i),
+                    Order = i,
                     Parent = parent,
-                    Order = 0,
-                    Title = "({0}) Imprimir todos os números da lista"
-                },
-                new CommandNode
-                {
-                    Action = () => _screenCommand.PrintBigText($"Ordem crescente : {string.Join(" | ", ObterOrdemCrescente())}"),
-                    Parent = parent,
-                    Order = 1,
-                    Title = "({0}) Imprimir todos os números da lista na ordem crescente"
-                },
-                new CommandNode
-                {
-                    Action = () => _screenCommand.PrintBigText($"Ordem decrescente : {string.Join(" | ", ObterOrdemDecrescente())}"),
-                    Parent = parent,
-                    Order = 2,
-                    Title = "({0}) Imprimir todos os números da lista na ordem decrescente"
-                },
-                new CommandNode
-                {
-                    Action = () => _screenCommand.PrintResult($"Primeiro número da lista : {ObterPrimeiroNumero()}"),
-                    Parent = parent,
-                    Order = 3,
-                    Title = "({0}) Imprima apenas o primeiro número da lista"
-                },
-                new CommandNode
-                {
-                    Action = () => _screenCommand.PrintResult($"Ultimo número da lista : {ObterUltimoNumero()}"),
-                    Parent = parent,
-                    Order = 4,
-                    Title = "({0}) Imprima apenas o ultimo número da lista"
-                },
-                new CommandNode
-                {
-                    Action = () =>
-                    {
-                        InserirNoComeco();
-                        ImprimirTodos();
-                    },
-                    Parent = parent,
-                    Order = 5,
-                    Title = "({0}) Insira um número no início da lista"
-                },
-                new CommandNode
-                {
-                    Action = () =>
-                    {
-                        InserirNoFim();
-                        ImprimirTodos();
-                    },
-                    Parent = parent,
-                    Order = 6,
-                    Title = "({0}) Insira um número no final da lista"
-                },
-                new CommandNode
-                {
-                    Action = () =>
-                    {
-                        RemoverPrimeiro();
-                        ImprimirTodos();
-                    },
-                    Parent = parent,
-                    Order = 7,
-                    Title = "({0}) Remova o primeiro número"
-                },
-                new CommandNode
-                {
-                    Action = () =>
-                    {
-                        RemoverUltimo();
-                        ImprimirTodos();
-                    },
-                    Parent = parent,
-                    Order = 8,
-                    Title = "({0}) Remova o último número"
-                },
-                new CommandNode
-                {
-                    Action = () => _screenCommand.PrintBigText($"Número(s) par(es) {string.Join(" | ", ObterNumerosPares())}"),
-                    Parent = parent,
-                    Order = 9,
-                    Title = "({0}) Retorne apenas os números pares"
-                },
-                new CommandNode
-                {
-                    Action = () => _screenCommand.PrintResult($"Número encontrado é : {ConsultarNumero()}"),
-                    Parent = parent,
-                    Order = 10,
-                    Title = "({0}) Retorne apenas o número informado"
-                }
-            };
+                    Title = Text.ResourceManager.GetString($"Pergunta-8-{i}"),
+                };
+            }
 
             return commands;
         }
 
+        private Action ValidateAction(Action action)
+        {
+            return () =>
+            {
+                if (_numeros.Any())
+                {
+                    action();
+                }
+                else
+                {
+                    _screenCommand.PrintResult(Text.ListaVazia);
+                }
+            };
+        }
+
         private void ReceberValores()
         {
-            var numero = _screenCommand.InputValue("Insira o número: ");
+            var numero = _screenCommand.InputValue(Text.InserirNumero);
 
             _numero = Convert.ToInt32(numero, GetNumberFormatInfo(numero));
+        }
+
+        private Action GetActions(int index)
+        {
+            return index switch
+            {
+                0 => ValidateAction(() => ImprimirTodos()),
+                1 => ValidateAction(() => _screenCommand.PrintBigText(string.Format(Text.Resposta_8_1, ObterOrdemCrescente()))),
+                2 => ValidateAction(() => _screenCommand.PrintBigText(string.Format(Text.Resposta_8_2, ObterOrdemDecrescente()))),
+                3 => ValidateAction(() => _screenCommand.PrintBigText(string.Format(Text.Resposta_8_3, ObterPrimeiroNumero()))),
+                4 => ValidateAction(() => _screenCommand.PrintResult(string.Format(Text.Resposta_8_4, ObterUltimoNumero()))),
+                5 => () =>
+                {
+                    InserirNoComeco();
+                    ImprimirTodos();
+                }
+                ,
+                6 => () =>
+                {
+                    InserirNoFim();
+                    ImprimirTodos();
+                }
+                ,
+                7 => () =>
+                {
+                    RemoverPrimeiro();
+                    ImprimirTodos();
+                }
+                ,
+                8 => () =>
+                {
+                    RemoverUltimo();
+                    ImprimirTodos();
+                }
+                ,
+                9 => ValidateAction(() => _screenCommand.PrintBigText(string.Format(Text.Resposta_8_9, ObterNumerosPares()))),
+                10 => ValidateAction(() => _screenCommand.PrintResult(string.Format(Text.Resposta_8_10, ConsultarNumero()))),
+                _ => default,
+            };
         }
     }
 }

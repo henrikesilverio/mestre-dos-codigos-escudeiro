@@ -10,7 +10,7 @@ namespace MDC.Escudeiro.Exercicio.Console
     public class ExercicioOito : AbstractExercise
     {
         private readonly IScreenCommand _screenCommand;
-        private static readonly List<decimal> _numeros = new List<decimal>();
+        private readonly List<decimal> _numeros = new List<decimal>();
         private decimal _numero;
 
         public ExercicioOito(IScreenCommand screenCommand)
@@ -26,65 +26,55 @@ namespace MDC.Escudeiro.Exercicio.Console
             return _numeros;
         }
 
-        public List<decimal> ObterOrdemCrescente()
+        public string ObterOrdemCrescente()
         {
-            return _numeros.OrderBy(x => x).ToList();
+            return string.Join(" | ", _numeros.OrderBy(x => x).ToArray());
         }
 
-        public List<decimal> ObterOrdemDecrescente()
+        public string ObterOrdemDecrescente()
         {
-            return _numeros.OrderByDescending(x => x).ToList();
-        }
-
-        public void RemoverTodos()
-        {
-            _numeros.Clear();
+            return string.Join(" | ", _numeros.OrderByDescending(x => x).ToArray());
         }
 
         public override CommandNode[] GetBranches(CommandNode parent)
         {
-            var commands = new CommandNode[]
+            var commands = new CommandNode[3];
+
+            for (int i = 0; i < commands.Length; i++)
             {
-                new CommandNode
+                commands[i] = new CommandNode
                 {
-                    Action = () =>
-                    {
-                        var funcionario = InserirNumero();
-                        _screenCommand.PrintResult($"Número: {_numero} inserido");
-                    },
+                    Action = GetActions(i),
+                    Order = i,
                     Parent = parent,
-                    Order = 0,
-                    Title = "({0}) Inserir número"
-                },
-                new CommandNode
-                {
-                    Action = () =>
-                    {
-                        _screenCommand.PrintResult($"Ordem crescente : {string.Join(" | ", ObterOrdemCrescente())}");
-                    },
-                    Parent = parent,
-                    Order = 1,
-                    Title = "({0}) Imprimir em ordem crescente"
-                },
-                new CommandNode
-                {
-                    Action = () =>
-                    {
-                        _screenCommand.PrintResult($"Ordem decrescente : {string.Join(" | ", ObterOrdemDecrescente())}");
-                    },
-                    Parent = parent,
-                    Order = 2,
-                    Title = "({0}) Imprimir em ordem decrescente"
-                },
-            };
+                    Title = Text.ResourceManager.GetString($"Pergunta-7-{i}"),
+                };
+            }
+
             return commands;
         }
 
         private void ReceberValores()
         {
-            var numero = _screenCommand.InputValue("Insira o número: ");
+            var numero = _screenCommand.InputValue(Text.InserirNumero);
 
             _numero = Convert.ToDecimal(numero, GetNumberFormatInfo(numero));
+        }
+
+        private Action GetActions(int index)
+        {
+            return index switch
+            {
+                0 => () =>
+                {
+                    var funcionario = InserirNumero();
+                    _screenCommand.PrintResult(string.Format(Text.Resposta_7_0, _numero));
+                }
+                ,
+                1 => () => _screenCommand.PrintResult(string.Format(Text.Resposta_7_1, ObterOrdemCrescente())),
+                2 => () => _screenCommand.PrintResult(string.Format(Text.Resposta_7_2, ObterOrdemDecrescente())),
+                _ => default,
+            };
         }
     }
 }

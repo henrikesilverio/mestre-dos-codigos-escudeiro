@@ -22,14 +22,14 @@ namespace MDC.Escudeiro {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Texts {
+    public class Text {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Texts() {
+        internal Text() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace MDC.Escudeiro {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MDC.Escudeiro.Texts", typeof(Texts).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MDC.Escudeiro.Text", typeof(Text).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -70,29 +70,11 @@ namespace MDC.Escudeiro {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A criação do C# foi baseada nas linguagens de programação C, C++ e Java. Deste modo, programadores habituados com uma dessas linguagens são capazes de desenvolver soluções sem maiores dificuldades, pois ela reúne recursos de cada uma destas linguagens base e adiciona novos recursos exclusivos. Em relação a linguagem C, o C# tem foco na compilação de soluções de alto nível, já a linguagem C é voltada para o desenvolvimento de baixo nível. Outras comparações, de acordo com MSDN (2012), o C#, simplifica de mod [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string _000 {
-            get {
-                return ResourceManager.GetString("000", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to ({0}) Inicialmente o C# foi criado para qual finalidade?.
         /// </summary>
         public static string _01 {
             get {
                 return ResourceManager.GetString("01", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to O C# surgiu com a finalidade de possibilitar a criação de soluções executáveis sobre a plataforma .NET Framework, com o intuito de flexibilizar o desenvolvimento de aplicativos. Dessa maneira, o desenvolvedor não cria soluções para um dispositivo eletrônico específico, e sim para a plataforma .NET Framework..
-        /// </summary>
-        public static string _010 {
-            get {
-                return ResourceManager.GetString("010", resourceCulture);
             }
         }
         
@@ -106,29 +88,11 @@ namespace MDC.Escudeiro {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to O .NET Framework é usado para desenvolvimento de aplicações Windows usando Windows Forms , WPF e de aplicações Web usando ASP .NET MVC. O .NET Core é open-source e multiplataforma e suporta UWP e as bibliotecas da ASP .NET Core. A UWP é usada para criar aplicação Windows 10 e a ASP .NET Core é usada para criar aplicações Web para Windows, Linux e Mac..
-        /// </summary>
-        public static string _020 {
-            get {
-                return ResourceManager.GetString("020", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to ({0}) Cite as principais diferenças entre .Net Full Framework e .Net Core..
         /// </summary>
         public static string _03 {
             get {
                 return ResourceManager.GetString("03", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to O principal motivo foi adicionar as seguintes características e torna-lo o sucessor do .Net framework. Primeiramente, a possibilidade de plataforma cruzada entre diferentes sistemas operacionais para uma mesma solução. O .Net Core possui código-fonte aberto, se tornando um software livre. Ele implementa funcionalidades modernas como programação assíncrona e recursos de alto desempenho. Além de fornecer compatibilidade com contêineres do Docker disponibilizando uma implantação flexível..
-        /// </summary>
-        public static string _030 {
-            get {
-                return ResourceManager.GetString("030", resourceCulture);
             }
         }
         
@@ -214,11 +178,38 @@ namespace MDC.Escudeiro {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Trabalhando no Console.
+        ///   Looks up a localized string similar to ({0}) Perguntas teóricas sobre POO.
         /// </summary>
-        public static string IntroducaoConsole {
+        public static string _20 {
             get {
-                return ResourceManager.GetString("IntroducaoConsole", resourceCulture);
+                return ResourceManager.GetString("20", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ({0}) Crie uma classe para representar uma pessoa.
+        /// </summary>
+        public static string _21 {
+            get {
+                return ResourceManager.GetString("21", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ({0}) Faça uma aplicação bancária.
+        /// </summary>
+        public static string _22 {
+            get {
+                return ResourceManager.GetString("22", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ({0}) Crie uma classe Televisao e uma classe ControleRemoto que pode controlar o volume e trocar os canais da televisão..
+        /// </summary>
+        public static string _23 {
+            get {
+                return ResourceManager.GetString("23", resourceCulture);
             }
         }
         
@@ -228,15 +219,6 @@ namespace MDC.Escudeiro {
         public static string IntroducaoOpcoes {
             get {
                 return ResourceManager.GetString("IntroducaoOpcoes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Perguntas teóricas de introdução.
-        /// </summary>
-        public static string IntroducaoTeorica {
-            get {
-                return ResourceManager.GetString("IntroducaoTeorica", resourceCulture);
             }
         }
         
@@ -268,38 +250,38 @@ namespace MDC.Escudeiro {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ({0}) Validar os exercícios de console.
+        ///   Looks up a localized string similar to Bem-vindo ao território de .Net do Mestre dos Códigos.
         /// </summary>
-        public static string OpcaoDois {
+        public static string Saudacoes {
             get {
-                return ResourceManager.GetString("OpcaoDois", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ({0}) Validar os exercícios de programação orientada a objetos.
-        /// </summary>
-        public static string OpcaoTres {
-            get {
-                return ResourceManager.GetString("OpcaoTres", resourceCulture);
+                return ResourceManager.GetString("Saudacoes", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to ({0}) Respostas sobre a parte teóricas.
         /// </summary>
-        public static string OpcaoUm {
+        public static string Titulo_0 {
             get {
-                return ResourceManager.GetString("OpcaoUm", resourceCulture);
+                return ResourceManager.GetString("Titulo-0", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bem-vindo ao território de .Net do Mestre dos Códigos.
+        ///   Looks up a localized string similar to ({0}) Validar os exercícios de console.
         /// </summary>
-        public static string Saudacoes {
+        public static string Titulo_1 {
             get {
-                return ResourceManager.GetString("Saudacoes", resourceCulture);
+                return ResourceManager.GetString("Titulo-1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ({0}) Validar os exercícios de programação orientada a objetos.
+        /// </summary>
+        public static string Titulo_2 {
+            get {
+                return ResourceManager.GetString("Titulo-2", resourceCulture);
             }
         }
     }

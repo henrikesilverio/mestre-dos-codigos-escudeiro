@@ -43,49 +43,23 @@ namespace MDC.Escudeiro.Exercicio.Console
         public string Classificar()
         {
             ReceberValores();
-            return $"Valor A: {_primeiroValor} {TipoValor(_primeiroValor)}, Valor B: {_segundoValor} {TipoValor(_segundoValor)}";
+            return string.Format(Text.Resposta_0_4, _primeiroValor, TipoValor(_primeiroValor), _segundoValor, TipoValor(_segundoValor));
         }
 
         public override CommandNode[] GetBranches(CommandNode parent)
         {
-            var commands = new CommandNode[]
+            var commands = new CommandNode[5];
+
+            for (int i = 0; i < commands.Length; i++)
             {
-                new CommandNode
+                commands[i] = new CommandNode
                 {
-                    Action = () => _screenCommand.PrintResult($"O valor de A + B = {Somar()}"),
+                    Action = GetActions(i),
+                    Order = i,
                     Parent = parent,
-                    Order = 0,
-                    Title = "({0}) Some esses 2 valores"
-                },
-                new CommandNode
-                {
-                    Action = () => _screenCommand.PrintResult($"O valor de A - B = {Subtrair()}"),
-                    Parent = parent,
-                    Order = 1,
-                    Title = "({0}) Faça uma subtração do valor A - B"
-                },
-                new CommandNode
-                {
-                    Action = () => _screenCommand.PrintResult($"O valor de B / A = {Dividir()}"),
-                    Parent = parent,
-                    Order = 2,
-                    Title = "({0}) Divida o valor B por A"
-                },
-                new CommandNode
-                {
-                    Action = () => _screenCommand.PrintResult($"O valor de A * B = {Multiplicar()}"),
-                    Parent = parent,
-                    Order = 3,
-                    Title = "({0}) Multiplique o valor A por B"
-                },
-                new CommandNode
-                {
-                    Action = () => _screenCommand.PrintResult(Classificar()),
-                    Parent = parent,
-                    Order = 4,
-                    Title = "({0}) Número par ou ímpar"
-                }
-            };
+                    Title = Text.ResourceManager.GetString($"Pergunta-0-{i}"),
+                };
+            }
 
             return commands;
         }
@@ -94,11 +68,24 @@ namespace MDC.Escudeiro.Exercicio.Console
 
         private void ReceberValores()
         {
-            var primeiroValor = _screenCommand.InputValue("Insira o valor A: ");
-            var segundoValor = _screenCommand.InputValue("Insira o valor B: ");
+            var primeiroValor = _screenCommand.InputValue(string.Format(Text.InserirValor, "A"));
+            var segundoValor = _screenCommand.InputValue(string.Format(Text.InserirValor, "B"));
 
             _primeiroValor = Convert.ToDecimal(primeiroValor, GetNumberFormatInfo(primeiroValor));
             _segundoValor = Convert.ToDecimal(segundoValor, GetNumberFormatInfo(segundoValor));
+        }
+
+        private Action GetActions(int index)
+        {
+            return index switch
+            {
+                0 => () => _screenCommand.PrintResult(string.Format(Text.Resposta_0_0, Somar())),
+                1 => () => _screenCommand.PrintResult(string.Format(Text.Resposta_0_1, Subtrair())),
+                2 => () => _screenCommand.PrintResult(string.Format(Text.Resposta_0_2, Dividir())),
+                3 => () => _screenCommand.PrintResult(string.Format(Text.Resposta_0_3, Multiplicar())),
+                4 => () => _screenCommand.PrintResult(Classificar()),
+                _ => default,
+            };
         }
     }
 }

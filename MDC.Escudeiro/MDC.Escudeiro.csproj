@@ -8,20 +8,22 @@
   <ItemGroup>
     <ProjectReference Include="..\MDC.Escudeiro.Domain\MDC.Escudeiro.Domain.csproj" />
     <ProjectReference Include="..\MDC.Escudeiro.Exercicio.Console\MDC.Escudeiro.Exercicio.Console.csproj" />
+    <ProjectReference Include="..\MDC.Escudeiro.Exercicio.POO\MDC.Escudeiro.Exercicio.POO.csproj" />
+    <ProjectReference Include="..\MDC.Escudeiro.Exercicio.Teorico\MDC.Escudeiro.Exercicio.Teorico.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Texts.Designer.cs">
+    <Compile Update="Text.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Texts.resx</DependentUpon>
+      <DependentUpon>Text.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Texts.resx">
+    <EmbeddedResource Update="Text.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Texts.Designer.cs</LastGenOutput>
+      <LastGenOutput>Text.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

@@ -5,11 +5,15 @@ VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MDC.Escudeiro", "MDC.Escudeiro\MDC.Escudeiro.csproj", "{0167B482-113C-4420-A8AF-31EFFECC2D07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDC.Escudeiro.Domain", "MDC.Escudeiro.Domain\MDC.Escudeiro.Domain.csproj", "{7B589B65-5B6C-4D2C-A267-D37BD9767164}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MDC.Escudeiro.Domain", "MDC.Escudeiro.Domain\MDC.Escudeiro.Domain.csproj", "{7B589B65-5B6C-4D2C-A267-D37BD9767164}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDC.Escudeiro.Exercicio.Console", "MDC.Escudeiro.Exercicio.Console\MDC.Escudeiro.Exercicio.Console.csproj", "{E7A25F96-5347-4A1D-A48D-5469E67FD14F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MDC.Escudeiro.Exercicio.Console", "MDC.Escudeiro.Exercicio.Console\MDC.Escudeiro.Exercicio.Console.csproj", "{E7A25F96-5347-4A1D-A48D-5469E67FD14F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDC.Escudeiro.Exercicio.Console.Teste", "MDC.Escudeiro.Exercicio.Console.Teste\MDC.Escudeiro.Exercicio.Console.Teste.csproj", "{283B4314-6598-46CF-9768-7107CD8EEFD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MDC.Escudeiro.Exercicio.Console.Teste", "MDC.Escudeiro.Exercicio.Console.Teste\MDC.Escudeiro.Exercicio.Console.Teste.csproj", "{283B4314-6598-46CF-9768-7107CD8EEFD8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MDC.Escudeiro.Exercicio.POO", "MDC.Escudeiro.Exercicio.POO\MDC.Escudeiro.Exercicio.POO.csproj", "{3C98ED8D-5B60-4B2D-924F-DE41653702C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDC.Escudeiro.Exercicio.Teorico", "MDC.Escudeiro.Exercicio.Teorico\MDC.Escudeiro.Exercicio.Teorico.csproj", "{8DFDFB01-E543-455C-AE2E-7599270929C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{283B4314-6598-46CF-9768-7107CD8EEFD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{283B4314-6598-46CF-9768-7107CD8EEFD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{283B4314-6598-46CF-9768-7107CD8EEFD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C98ED8D-5B60-4B2D-924F-DE41653702C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C98ED8D-5B60-4B2D-924F-DE41653702C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C98ED8D-5B60-4B2D-924F-DE41653702C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C98ED8D-5B60-4B2D-924F-DE41653702C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DFDFB01-E543-455C-AE2E-7599270929C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DFDFB01-E543-455C-AE2E-7599270929C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DFDFB01-E543-455C-AE2E-7599270929C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DFDFB01-E543-455C-AE2E-7599270929C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

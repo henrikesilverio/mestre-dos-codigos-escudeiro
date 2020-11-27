@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="InserirNome" xml:space="preserve">
+    <value>Insira o nome: </value>
+  </data>
+  <data name="InserirNota" xml:space="preserve">
+    <value>Insira a nota: </value>
+  </data>
+  <data name="InserirNumero" xml:space="preserve">
+    <value>Insira o número: </value>
+  </data>
+  <data name="InserirPosicaoValor" xml:space="preserve">
+    <value>Insira o {0}° valor: </value>
+  </data>
+  <data name="InserirSalario" xml:space="preserve">
+    <value>Insira o salário: </value>
+  </data>
+  <data name="InserirValor" xml:space="preserve">
+    <value>Insira o valor {0}: </value>
+  </data>
+  <data name="ListaVazia" xml:space="preserve">
+    <value>A lista está vazia</value>
+  </data>
+  <data name="Pergunta-0-0" xml:space="preserve">
+    <value>({0}) Some esses 2 valores</value>
+  </data>
+  <data name="Pergunta-0-1" xml:space="preserve">
+    <value>({0}) Faça uma subtração do valor A - B</value>
+  </data>
+  <data name="Pergunta-0-2" xml:space="preserve">
+    <value>({0}) Divida o valor B por A</value>
+  </data>
+  <data name="Pergunta-0-3" xml:space="preserve">
+    <value>({0}) Multiplique o valor A por B</value>
+  </data>
+  <data name="Pergunta-0-4" xml:space="preserve">
+    <value>({0}) Número par ou ímpar</value>
+  </data>
+  <data name="Pergunta-1-0" xml:space="preserve">
+    <value>({0}) Inserir funcionários</value>
+  </data>
+  <data name="Pergunta-1-1" xml:space="preserve">
+    <value>({0}) Imprima o maior salário</value>
+  </data>
+  <data name="Pergunta-1-2" xml:space="preserve">
+    <value>({0}) Imprima o menor salário</value>
+  </data>
+  <data name="Pergunta-2-0" xml:space="preserve">
+    <value>({0}) Imprima todos os múltiplos de 3</value>
+  </data>
+  <data name="Pergunta-3-0" xml:space="preserve">
+    <value>({0}) Inserir aluno</value>
+  </data>
+  <data name="Pergunta-3-1" xml:space="preserve">
+    <value>({0}) Imprima todos os alunos com média superior a 7</value>
+  </data>
+  <data name="Pergunta-4-0" xml:space="preserve">
+    <value>({0}) Receba os valores a, b, c</value>
+  </data>
+  <data name="Pergunta-5-0" xml:space="preserve">
+    <value>({0}) Definição do ref</value>
+  </data>
+  <data name="Pergunta-5-1" xml:space="preserve">
+    <value>({0}) Definição do out</value>
+  </data>
+  <data name="Pergunta-6-0" xml:space="preserve">
+    <value>({0}) Somar os pares</value>
+  </data>
+  <data name="Pergunta-7-0" xml:space="preserve">
+    <value>({0}) Inserir número</value>
+  </data>
+  <data name="Pergunta-7-1" xml:space="preserve">
+    <value>({0}) Imprimir em ordem crescente</value>
+  </data>
+  <data name="Pergunta-7-2" xml:space="preserve">
+    <value>({0}) Imprimir em ordem decrescente</value>
+  </data>
+  <data name="Pergunta-8-0" xml:space="preserve">
+    <value>({0}) Imprimir todos os números da lista</value>
+  </data>
+  <data name="Pergunta-8-1" xml:space="preserve">
+    <value>({0}) Imprimir todos os números da lista na ordem crescente</value>
+  </data>
+  <data name="Pergunta-8-10" xml:space="preserve">
+    <value>({0}) Retorne apenas o número informado</value>
+  </data>
+  <data name="Pergunta-8-2" xml:space="preserve">
+    <value>({0}) Imprimir todos os números da lista na ordem decrescente</value>
+  </data>
+  <data name="Pergunta-8-3" xml:space="preserve">
+    <value>({0}) Imprima apenas o primeiro número da lista</value>
+  </data>
+  <data name="Pergunta-8-4" xml:space="preserve">
+    <value>({0}) Imprima apenas o ultimo número da lista</value>
+  </data>
+  <data name="Pergunta-8-5" xml:space="preserve">
+    <value>({0}) Insira um número no início da lista</value>
+  </data>
+  <data name="Pergunta-8-6" xml:space="preserve">
+    <value>({0}) Insira um número no final da lista</value>
+  </data>
+  <data name="Pergunta-8-7" xml:space="preserve">
+    <value>({0}) Remova o primeiro número</value>
+  </data>
+  <data name="Pergunta-8-8" xml:space="preserve">
+    <value>({0}) Remova o último número</value>
+  </data>
+  <data name="Pergunta-8-9" xml:space="preserve">
+    <value>({0}) Retorne apenas os números pares</value>
+  </data>
+  <data name="Resposta-0-0" xml:space="preserve">
+    <value>O valor de A + B = {0}</value>
+  </data>
+  <data name="Resposta-0-1" xml:space="preserve">
+    <value>O valor de A - B = {0}</value>
+  </data>
+  <data name="Resposta-0-2" xml:space="preserve">
+    <value>O valor de B / A = {0}</value>
+  </data>
+  <data name="Resposta-0-3" xml:space="preserve">
+    <value>O valor de A * B = {0}</value>
+  </data>
+  <data name="Resposta-0-4" xml:space="preserve">
+    <value>Valor A: {0} {1}, Valor B: {2} {3}</value>
+  </data>
+  <data name="Resposta-1-0" xml:space="preserve">
+    <value>Funcionario nome: {0}, salário: {1} inserido</value>
+  </data>
+  <data name="Resposta-1-1" xml:space="preserve">
+    <value>O maior salário é: {0}</value>
+  </data>
+  <data name="Resposta-1-2" xml:space="preserve">
+    <value>O menor salário é: {0}</value>
+  </data>
+  <data name="Resposta-2-0" xml:space="preserve">
+    <value>{0} é múltiplo de 3</value>
+  </data>
+  <data name="Resposta-3-0" xml:space="preserve">
+    <value>Aluno nome: {0}, nota: {1} inserido</value>
+  </data>
+  <data name="Resposta-3-1" xml:space="preserve">
+    <value>Aluno nome: {0}, nota: {1}</value>
+  </data>
+  <data name="Resposta-4-0" xml:space="preserve">
+    <value>A raiz X' é: {0} e a raiz X'' é: {1}</value>
+  </data>
+  <data name="Resposta-5-0" xml:space="preserve">
+    <value>Usado para indicar que o parâmetro passado pode ser modificado pelo método. Por padrão, um tipo de referência passado para um método terá todas as alterações feitas em seus valores refletidas fora do método também. Se você atribuir o tipo de referência a um novo tipo de referência dentro do método, essas alterações serão apenas locais para o método.</value>
+  </data>
+  <data name="Resposta-5-1" xml:space="preserve">
+    <value>Usado para indicar que o parâmetro passado deve ser modificado pelo método. Usando o modificador out, inicializamos uma variável dentro do método. Como ref, tudo o que acontece no método altera a variável fora do método. Com ref, você tem a opção de não fazer alterações no parâmetro. Ao usar out, você deve inicializar o parâmetro que passa dentro do método.</value>
+  </data>
+  <data name="Resposta-6-0" xml:space="preserve">
+    <value>A soma dos números pares é: {0}</value>
+  </data>
+  <data name="Resposta-6-1" xml:space="preserve">
+    <value>Número(s) par(es): {0}</value>
+  </data>
+  <data name="Resposta-7-0" xml:space="preserve">
+    <value>Número: {0} inserido</value>
+  </data>
+  <data name="Resposta-7-1" xml:space="preserve">
+    <value>Ordem crescente : {0}</value>
+  </data>
+  <data name="Resposta-7-2" xml:space="preserve">
+    <value>Ordem decrescente : {0}</value>
+  </data>
+  <data name="Resposta-8-0" xml:space="preserve">
+    <value>Todos valores inseridos: {0}</value>
+  </data>
+  <data name="Resposta-8-1" xml:space="preserve">
+    <value>Ordem crescente : {0}</value>
+  </data>
+  <data name="Resposta-8-2" xml:space="preserve">
+    <value>Ordem decrescente : {0}</value>
+  </data>
+  <data name="Resposta-8-3" xml:space="preserve">
+    <value>Primeiro número da lista : {0}</value>
+  </data>
+  <data name="Resposta-8-4" xml:space="preserve">
+    <value>Ultimo número da lista : {0}</value>
+  </data>
+  <data name="Resposta-8-9" xml:space="preserve">
+    <value>Número(s) par(es) {0}</value>
+  </data>
+  <data name="Resposta_8_10" xml:space="preserve">
+    <value>Número encontrado é : {0}</value>
+  </data>
+</root>

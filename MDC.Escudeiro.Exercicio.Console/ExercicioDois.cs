@@ -10,7 +10,7 @@ namespace MDC.Escudeiro.Exercicio.Console
     public class ExercicioDois : AbstractExercise
     {
         private readonly IScreenCommand _screenCommand;
-        private static readonly List<Funcionario> _funcionarios = new List<Funcionario>();
+        private readonly List<Funcionario> _funcionarios = new List<Funcionario>();
         private Funcionario _funcionario;
 
         public ExercicioDois(IScreenCommand screenCommand)
@@ -23,11 +23,6 @@ namespace MDC.Escudeiro.Exercicio.Console
             ReceberValores();
             _funcionarios.Add(_funcionario);
             return _funcionario;
-        }
-
-        public void RemoverTodos()
-        {
-            _funcionarios.Clear();
         }
 
         public decimal MaiorSalario()
@@ -70,47 +65,47 @@ namespace MDC.Escudeiro.Exercicio.Console
 
         public override CommandNode[] GetBranches(CommandNode parent)
         {
-            var commands = new CommandNode[]
+            var commands = new CommandNode[3];
+
+            for (int i = 0; i < commands.Length; i++)
             {
-                new CommandNode
+                commands[i] = new CommandNode
                 {
-                    Action = () =>
-                    {
-                        var funcionario = InserirFuncionario();
-                        _screenCommand.PrintResult($"Funcionario nome: {funcionario.Nome}, salário: {funcionario.Salario} inserido");
-                    },
+                    Action = GetActions(i),
+                    Order = i,
                     Parent = parent,
-                    Order = 0,
-                    Title = "({0}) Inserir funcionários"
-                },
-                new CommandNode
-                {
-                    Action = () => _screenCommand.PrintResult($"O maior salário é: {MaiorSalario()}"),
-                    Parent = parent,
-                    Order = 1,
-                    Title = "({0}) Imprima o maior salário"
-                },
-                new CommandNode
-                {
-                    Action = () => _screenCommand.PrintResult($"O menor salário é {MenorSalario()}"),
-                    Parent = parent,
-                    Order = 2,
-                    Title = "({0}) Imprima o menor salário"
-                }
-            };
+                    Title = Text.ResourceManager.GetString($"Pergunta-1-{i}"),
+                };
+            }
 
             return commands;
         }
 
         private void ReceberValores()
         {
-            var nome = _screenCommand.InputValue("Insira o nome: ");
-            var salario = _screenCommand.InputValue("Insira o salário: ");
+            var nome = _screenCommand.InputValue(Text.InserirNome);
+            var salario = _screenCommand.InputValue(Text.InserirSalario);
 
             _funcionario = new Funcionario
             {
                 Nome = nome,
                 Salario = Convert.ToDecimal(salario, GetNumberFormatInfo(salario))
+            };
+        }
+
+        private Action GetActions(int index)
+        {
+            return index switch
+            {
+                0 => () =>
+                {
+                    var funcionario = InserirFuncionario();
+                    _screenCommand.PrintResult(string.Format(Text.Resposta_1_0, funcionario.Nome, funcionario.Salario));
+                }
+                ,
+                1 => () => _screenCommand.PrintResult(string.Format(Text.Resposta_1_1, MaiorSalario())),
+                2 => () => _screenCommand.PrintResult(string.Format(Text.Resposta_1_2, MenorSalario())),
+                _ => default,
             };
         }
     }

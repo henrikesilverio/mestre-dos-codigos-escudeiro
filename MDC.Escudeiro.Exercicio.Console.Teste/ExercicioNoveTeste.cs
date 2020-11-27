@@ -18,7 +18,6 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
         public void ExercicioNove_Obter_Ordem_Crescente()
         {
             var exercicio = new ExercicioNove(_screenCommand.Object);
-            exercicio.RemoverTodos();
 
             for (int i = 3; i >= 1; i--)
             {
@@ -26,18 +25,16 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
                     .Setup(x => x.InputValue("Insira o número: "))
                     .Returns(i.ToString());
 
-                exercicio = new ExercicioNove(_screenCommand.Object);
                 exercicio.InserirNoFim();
             }
 
-            Assert.Equal("1,2,3", string.Join(",", exercicio.ObterOrdemCrescente()));
+            Assert.Equal("1 | 2 | 3", exercicio.ObterOrdemCrescente());
         }
 
         [Fact(DisplayName = "Imprimir todos os números da lista na ordem decrescente")]
         public void ExercicioNove_Obter_Ordem_Decrescente()
         {
             var exercicio = new ExercicioNove(_screenCommand.Object);
-            exercicio.RemoverTodos();
 
             for (int i = 1; i <= 3; i++)
             {
@@ -45,18 +42,16 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
                     .Setup(x => x.InputValue("Insira o número: "))
                     .Returns(i.ToString());
 
-                exercicio = new ExercicioNove(_screenCommand.Object);
                 exercicio.InserirNoFim();
             }
 
-            Assert.Equal("3,2,1", string.Join(",", exercicio.ObterOrdemDecrescente()));
+            Assert.Equal("3 | 2 | 1", exercicio.ObterOrdemDecrescente());
         }
 
         [Fact(DisplayName = "Imprima apenas o primeiro número da lista")]
         public void ExercicioNove_Obter_Primeiro_Numero()
         {
             var exercicio = new ExercicioNove(_screenCommand.Object);
-            exercicio.RemoverTodos();
 
             for (int i = 1; i <= 3; i++)
             {
@@ -64,7 +59,6 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
                     .Setup(x => x.InputValue("Insira o número: "))
                     .Returns(i.ToString());
 
-                exercicio = new ExercicioNove(_screenCommand.Object);
                 exercicio.InserirNoFim();
             }
 
@@ -75,7 +69,6 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
         public void ExercicioNove_Obter_Ultimo_Numero()
         {
             var exercicio = new ExercicioNove(_screenCommand.Object);
-            exercicio.RemoverTodos();
 
             for (int i = 1; i <= 3; i++)
             {
@@ -83,7 +76,6 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
                     .Setup(x => x.InputValue("Insira o número: "))
                     .Returns(i.ToString());
 
-                exercicio = new ExercicioNove(_screenCommand.Object);
                 exercicio.InserirNoFim();
             }
 
@@ -94,7 +86,6 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
         public void ExercicioNove_Inserir_No_Comeco()
         {
             var exercicio = new ExercicioNove(_screenCommand.Object);
-            exercicio.RemoverTodos();
 
             for (int i = 1; i <= 3; i++)
             {
@@ -102,7 +93,6 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
                     .Setup(x => x.InputValue("Insira o número: "))
                     .Returns(i.ToString());
 
-                exercicio = new ExercicioNove(_screenCommand.Object);
                 exercicio.InserirNoComeco();
             }
 
@@ -113,7 +103,6 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
         public void ExercicioNove_Inserir_No_Fim()
         {
             var exercicio = new ExercicioNove(_screenCommand.Object);
-            exercicio.RemoverTodos();
 
             for (int i = 1; i <= 3; i++)
             {
@@ -121,7 +110,6 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
                     .Setup(x => x.InputValue("Insira o número: "))
                     .Returns(i.ToString());
 
-                exercicio = new ExercicioNove(_screenCommand.Object);
                 exercicio.InserirNoFim();
             }
 
@@ -132,7 +120,6 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
         public void ExercicioNove_Remover_Primeiro()
         {
             var exercicio = new ExercicioNove(_screenCommand.Object);
-            exercicio.RemoverTodos();
 
             for (int i = 1; i <= 3; i++)
             {
@@ -140,7 +127,6 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
                     .Setup(x => x.InputValue("Insira o número: "))
                     .Returns(i.ToString());
 
-                exercicio = new ExercicioNove(_screenCommand.Object);
                 exercicio.InserirNoFim();
             }
 
@@ -153,7 +139,6 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
         public void ExercicioNove_Remover_Ultimo()
         {
             var exercicio = new ExercicioNove(_screenCommand.Object);
-            exercicio.RemoverTodos();
 
             for (int i = 1; i <= 3; i++)
             {
@@ -161,7 +146,6 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
                     .Setup(x => x.InputValue("Insira o número: "))
                     .Returns(i.ToString());
 
-                exercicio = new ExercicioNove(_screenCommand.Object);
                 exercicio.InserirNoFim();
             }
 
@@ -174,7 +158,6 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
         public void ExercicioNove_Obter_Numeros_Pares()
         {
             var exercicio = new ExercicioNove(_screenCommand.Object);
-            exercicio.RemoverTodos();
 
             for (int i = 1; i <= 4; i++)
             {
@@ -182,18 +165,16 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
                     .Setup(x => x.InputValue("Insira o número: "))
                     .Returns(i.ToString());
 
-                exercicio = new ExercicioNove(_screenCommand.Object);
                 exercicio.InserirNoFim();
             }
 
-            Assert.Equal("2,4", string.Join(",", exercicio.ObterNumerosPares()));
+            Assert.Equal("2 | 4", exercicio.ObterNumerosPares());
         }
 
         [Fact(DisplayName = "Retorne apenas o número informado")]
         public void ExercicioNove_Consultar_Numero()
         {
             var exercicio = new ExercicioNove(_screenCommand.Object);
-            exercicio.RemoverTodos();
 
             for (int i = 1; i <= 4; i++)
             {
@@ -201,15 +182,12 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
                     .Setup(x => x.InputValue("Insira o número: "))
                     .Returns(i.ToString());
 
-                exercicio = new ExercicioNove(_screenCommand.Object);
                 exercicio.InserirNoFim();
             }
 
             _screenCommand
                 .Setup(x => x.InputValue("Insira o número: "))
                 .Returns("3");
-
-            exercicio = new ExercicioNove(_screenCommand.Object);
 
             Assert.Equal(3, exercicio.ConsultarNumero());
         }

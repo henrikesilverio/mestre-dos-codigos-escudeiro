@@ -26,7 +26,6 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
                 .Returns("6");
 
             var exercicio = new ExercicioQuatro(_screenCommand.Object);
-            exercicio.RemoverTodos();
             var aluno = exercicio.InserirAluno();
 
             Assert.Equal("Henrique", aluno.Nome);
@@ -37,7 +36,6 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
         public void ExercicioQuatro_Alunos_Com_Nota_Maior_Que_Sete()
         {
             var exercicio = new ExercicioQuatro(_screenCommand.Object);
-            exercicio.RemoverTodos();
 
             foreach (var nota in new[] { "6", "7.1", "7", "8" })
             {
@@ -49,7 +47,6 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
                     .Setup(x => x.InputValue("Insira a nota: "))
                     .Returns(nota);
 
-                exercicio = new ExercicioQuatro(_screenCommand.Object);
                 exercicio.InserirAluno();
             }
 

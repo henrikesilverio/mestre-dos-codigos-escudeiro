@@ -26,7 +26,6 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
                 .Returns("1000,50");
 
             var exercicio = new ExercicioDois(_screenCommand.Object);
-            exercicio.RemoverTodos();
             var funcionario = exercicio.InserirFuncionario();
 
             Assert.Equal("Henrique", funcionario.Nome);
@@ -37,7 +36,6 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
         public void ExercicioDois_Maior_Salario()
         {
             var exercicio = new ExercicioDois(_screenCommand.Object);
-            exercicio.RemoverTodos();
 
             foreach (var salario in new[] { "4000,50", "2000,50", "3000,50" })
             {
@@ -49,7 +47,6 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
                     .Setup(x => x.InputValue("Insira o salário: "))
                     .Returns(salario);
 
-                exercicio = new ExercicioDois(_screenCommand.Object);
                 exercicio.InserirFuncionario();
             }
 
@@ -62,7 +59,6 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
         public void ExercicioDois_Maior_Salario_Sem_Funcionario()
         {
             var exercicio = new ExercicioDois(_screenCommand.Object);
-            exercicio.RemoverTodos();
 
             var maior = exercicio.MaiorSalario();
 
@@ -73,7 +69,6 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
         public void ExercicioDois_Menor_Salario()
         {
             var exercicio = new ExercicioDois(_screenCommand.Object);
-            exercicio.RemoverTodos();
 
             foreach (var salario in new[] { "4000,50", "2000,50", "3000,50" })
             {
@@ -85,7 +80,6 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
                     .Setup(x => x.InputValue("Insira o salário: "))
                     .Returns(salario);
 
-                exercicio = new ExercicioDois(_screenCommand.Object);
                 exercicio.InserirFuncionario();
             }
 
@@ -98,7 +92,6 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
         public void ExercicioDois_Menor_Salario_Sem_Funcionario()
         {
             var exercicio = new ExercicioDois(_screenCommand.Object);
-            exercicio.RemoverTodos();
 
             var maior = exercicio.MenorSalario();
 

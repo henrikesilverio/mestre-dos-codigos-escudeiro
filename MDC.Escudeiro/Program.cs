@@ -1,4 +1,5 @@
-﻿using MDC.Escudeiro.Domain.Models;
+﻿using MDC.Escudeiro.Domain.Interfaces;
+using MDC.Escudeiro.Domain.Models;
 using System;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,9 @@ namespace MDC.Escudeiro
         private static int _selectedOption = 0;
         private static ConsoleColor _selectedOptionColor = ConsoleColor.Cyan;
         private static CommandNode _currentCommandNode;
+        private static ExerciseTheoreticalFactory _exerciseTheoreticalFactory = new ExerciseTheoreticalFactory();
+        private static ExerciseConsoleFactory _exerciseConsoleFactory = new ExerciseConsoleFactory();
+        private static ExercisePOOFactory _exercisePOOFactory = new ExercisePOOFactory();
 
         public static void Main(string[] args)
         {
@@ -70,84 +74,70 @@ namespace MDC.Escudeiro
         {
             var node = new CommandNode
             {
-                Action = ActionInitial,
+                Action = ActionBranchTitle,
                 Parent = null,
-                Title = Texts.Saudacoes
+                Title = Text.Saudacoes
             };
 
             node.Branches = new CommandNode[]
             {
-                BuildCommandNodeQuestion(node),
-                BuildCommandNodeConsoleExercise(node)
+                BuildCommandNodeQuestion(0, node, _exerciseTheoreticalFactory),
+                BuildCommandNodeExercise(1, node, _exerciseConsoleFactory),
+                BuildCommandNodeExercise(2, node, _exercisePOOFactory)
             };
 
             return node;
         }
 
-        private static CommandNode BuildCommandNodeQuestion(CommandNode parent)
+        private static CommandNode BuildCommandNodeQuestion(int order, CommandNode parent, IExerciseFactory exerciseFactory)
         {
             var node = new CommandNode
             {
-                Action = ActionTheoreticalQuestions,
-                Branches = new CommandNode[4],
+                Action = ActionBranchTitle,
                 Parent = parent,
-                Title = Texts.IntroducaoTeorica,
-                Order = 0
+                Title = Text.ResourceManager.GetString($"Titulo-{order}"),
+                Order = order
             };
 
-            for (int i = 0; i < 4; i++)
+            var exercise = exerciseFactory.Manufacture(order);
+            node.Branches = exercise.GetBranches(node);
+
+            return node;
+        }
+
+        private static CommandNode BuildCommandNodeExercise(int order, CommandNode parent, IExerciseFactory exerciseFactory)
+        {
+            var size = exerciseFactory.Size;
+            var node = new CommandNode
+            {
+                Action = ActionBranchTitle,
+                Branches = new CommandNode[size],
+                Parent = parent,
+                Title = Text.ResourceManager.GetString($"Titulo-{order}"),
+                Order = order
+            };
+
+            for (int i = 0; i < size; i++)
             {
                 var branch = new CommandNode
                 {
-                    Action = ActionAnswers,
+                    Action = ActionBranchTitle,
                     Parent = node,
                     Order = i
                 };
 
-                branch.Title = Texts.ResourceManager.GetString($"0{branch.Order}");
+                branch.Title = Text.ResourceManager.GetString($"{order}{branch.Order}");
                 node.Branches[i] = branch;
+                var exercise = exerciseFactory.Manufacture(node.Branches[i].Order);
+                branch.Branches = exercise.GetBranches(node.Branches[i]);
             }
 
             return node;
-        }
-
-        private static CommandNode BuildCommandNodeConsoleExercise(CommandNode parent)
-        {
-            var node = new CommandNode
-            {
-                Action = ActionConsolePracticalQuestions,
-                Branches = new CommandNode[9],
-                Parent = parent,
-                Title = Texts.IntroducaoConsole,
-                Order = 1
-            };
-
-            for (int i = 0; i < 9; i++)
-            {
-                var branch = new CommandNode
-                {
-                    Action = ActionOptionPracticalQuestions,
-                    Parent = node,
-                    Order = i
-                };
-
-                branch.Title = Texts.ResourceManager.GetString($"1{branch.Order}");
-                node.Branches[i] = branch;
-                branch.Branches = BuildCommandNodeConsoleExerciseAction(node.Branches[i]);
-            }
-
-            return node;
-        }
-
-        private static CommandNode[] BuildCommandNodeConsoleExerciseAction(CommandNode parent)
-        {
-            var exercise = ExerciseFactory.Manufacture(parent.Order);
-            return exercise.GetBranches(parent);
         }
 
         private static void PrintScreen()
         {
-            var footerText = Texts.MenuIntroducao;
+            var footerText = Text.MenuIntroducao;
             var option = _currentCommandNode.Order + 1;
             var title = string.Format(_currentCommandNode.Title, option);
 
@@ -157,18 +147,18 @@ namespace MDC.Escudeiro
 
             if (_currentCommandNode.Branches != null && _currentCommandNode.Branches.Any())
             {
-                WriteWithFixedSide(Texts.IntroducaoOpcoes, ConsoleColor.White);
+                WriteWithFixedSide(Text.IntroducaoOpcoes, ConsoleColor.White);
             }
 
             _currentCommandNode.Action();
 
             if (_currentCommandNode.Branches == null)
             {
-                footerText = Texts.MenuIntroducaoVoltar;
+                footerText = Text.MenuIntroducaoVoltar;
             }
             else if (_currentCommandNode.Parent != null)
             {
-                footerText = Texts.MenuIntroducaoEntrarVoltar;
+                footerText = Text.MenuIntroducaoEntrarVoltar;
             }
 
             DividerLine();
@@ -176,52 +166,14 @@ namespace MDC.Escudeiro
             DividerLine();
         }
 
-        private static void ActionInitial()
-        {
-            var optionsReference = new[] { "OpcaoUm", "OpcaoDois", "OpcaoTres" };
-
-            for (int i = 0; i < 3; i++)
-            {
-                var text = string.Format(Texts.ResourceManager.GetString(optionsReference[i]), SetOption(i));
-                WriteWithFixedSide(text, _selectedOptionColor);
-            }
-        }
-
-        private static void ActionAnswers()
-        {
-            var answer = Texts.ResourceManager.GetString($"0{_currentCommandNode.Order}0");
-
-            WriteWithFixedSideForAnswer(answer);
-        }
-
-        private static void ActionTheoreticalQuestions()
-        {
-            _numberOptions = 4;
-
-            for (int i = 0; i < 4; i++)
-            {
-                WriteWithFixedSide(string.Format(Texts.ResourceManager.GetString($"0{i}"), SetOption(i)), _selectedOptionColor);
-            }
-        }
-
-        private static void ActionConsolePracticalQuestions()
-        {
-            _numberOptions = 9;
-
-            for (int i = 0; i < 9; i++)
-            {
-                WriteWithFixedSide(string.Format(Texts.ResourceManager.GetString($"1{i}"), SetOption(i)), _selectedOptionColor);
-            }
-        }
-
-        private static void ActionOptionPracticalQuestions()
+        private static void ActionBranchTitle()
         {
             var branches = _currentCommandNode.Branches;
             _numberOptions = branches.Length;
 
-            for (int i = 0; i < _numberOptions; i++)
+            foreach (var branch in branches)
             {
-                WriteWithFixedSide(string.Format(branches[i].Title, SetOption(i)), _selectedOptionColor);
+                WriteWithFixedSide(string.Format(branch.Title, SetOption(branch.Order)), _selectedOptionColor);
             }
         }
 
@@ -263,38 +215,6 @@ namespace MDC.Escudeiro
 
             WriteWithColor(format, textColor);
             WriteWithColor($"{new string(' ', Console.WindowWidth - format.Length - 4)}||", ConsoleColor.White);
-            Console.ResetColor();
-        }
-
-        private static void WriteWithFixedSideForAnswer(string text)
-        {
-            var words = text.Split(" ");
-            var line = string.Empty;
-
-            for (var i = 0; i < words.Length; i++)
-            {
-                var lengthLine = line.Length + words[i].Length + 4;
-                if (lengthLine <= Console.WindowWidth)
-                {
-                    line += $" {words[i]}";
-                }
-                if (lengthLine > Console.WindowWidth)
-                {
-                    WriteWithColor("||", ConsoleColor.White);
-                    WriteWithColor(line, ConsoleColor.DarkGray);
-                    WriteWithColor($"{new string(' ', Console.WindowWidth - line.Length - 4)}||", ConsoleColor.White);
-
-                    line = string.Empty;
-                    i--;
-                }
-                if (i + 1 == words.Length)
-                {
-                    WriteWithColor("||", ConsoleColor.White);
-                    WriteWithColor(line, ConsoleColor.DarkGray);
-                    WriteWithColor($"{new string(' ', Console.WindowWidth - line.Length - 4)}||", ConsoleColor.White);
-                }
-            }
-
             Console.ResetColor();
         }
 

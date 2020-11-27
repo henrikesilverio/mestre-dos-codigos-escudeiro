@@ -37,11 +37,11 @@ namespace MDC.Escudeiro.Exercicio.Console
                     Action = () => 
                     {
                         var raizes = CalcularBhaskara();
-                        _screenCommand.PrintResult($"A raiz X' é: {raizes.Item1} e a raiz X'' é: {raizes.Item2}");
+                        _screenCommand.PrintResult(string.Format(Text.Resposta_4_0, raizes.Item1, raizes.Item2));
                     },
                     Parent = parent,
                     Order = 0,
-                    Title = "({0}) Receba os valores a, b, c"
+                    Title = Text.Pergunta_4_0
                 }
             };
 
@@ -50,9 +50,9 @@ namespace MDC.Escudeiro.Exercicio.Console
 
         private void ReceberValores()
         {
-            var valorA = _screenCommand.InputValue("Insira o valor A: ");
-            var valorB = _screenCommand.InputValue("Insira o valor B: ");
-            var valorC = _screenCommand.InputValue("Insira o valor C: ");
+            var valorA = _screenCommand.InputValue(string.Format(Text.InserirValor, "A"));
+            var valorB = _screenCommand.InputValue(string.Format(Text.InserirValor, "B"));
+            var valorC = _screenCommand.InputValue(string.Format(Text.InserirValor, "C"));
 
             _valorA = Convert.ToDouble(valorA, GetNumberFormatInfo(valorA));
             _valorB = Convert.ToDouble(valorB, GetNumberFormatInfo(valorB));

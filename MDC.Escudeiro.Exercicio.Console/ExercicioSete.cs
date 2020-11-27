@@ -32,12 +32,12 @@ namespace MDC.Escudeiro.Exercicio.Console
                 {
                     Action = () =>
                     {
-                        _screenCommand.PrintResult($"A soma dos números pares é: {SomarPares()}");
-                        _screenCommand.PrintResult($"Número(s) par(es): {string.Join(",", NumeroPares())}");
+                        _screenCommand.PrintResult(string.Format(Text.Resposta_6_0, SomarPares()));
+                        _screenCommand.PrintResult(string.Format(Text.Resposta_6_1, string.Join(",", NumeroPares())));
                     },
                     Parent = parent,
                     Order = 0,
-                    Title = "({0}) Somar os pares"
+                    Title = Text.Pergunta_6_0
                 }
             };
 
@@ -53,7 +53,7 @@ namespace MDC.Escudeiro.Exercicio.Console
         {
             for (int i = 0; i < 4; i++)
             {
-                var numero = _screenCommand.InputValue($"Insira o {i + 1}° valor: ");
+                var numero = _screenCommand.InputValue(string.Format(Text.InserirPosicaoValor, i + 1));
                 _numeros[i] = Convert.ToInt32(numero);
             }
         }

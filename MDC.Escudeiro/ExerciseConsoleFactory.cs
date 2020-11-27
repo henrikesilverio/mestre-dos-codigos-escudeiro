@@ -1,13 +1,16 @@
 ﻿using MDC.Escudeiro.Domain.Abstract;
+using MDC.Escudeiro.Domain.Interfaces;
 using MDC.Escudeiro.Exercicio.Console;
 
 namespace MDC.Escudeiro
 {
-    public static class ExerciseFactory
+    public class ExerciseConsoleFactory : IExerciseFactory
     {
-        public static AbstractExercise Manufacture(int indice)
+        public int Size => 9;
+
+        public AbstractExercise Manufacture(int index)
         {
-            return indice switch
+            return index switch
             {
                 0 => new ExercicioUm(_screenCommandConsole),
                 1 => new ExercicioDois(_screenCommandConsole),

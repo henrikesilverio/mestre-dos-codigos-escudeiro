@@ -1,6 +1,7 @@
 ﻿using MDC.Escudeiro.Domain.Abstract;
 using MDC.Escudeiro.Domain.Interfaces;
 using MDC.Escudeiro.Domain.Models;
+using System;
 
 namespace MDC.Escudeiro.Exercicio.Console
 {
@@ -25,45 +26,44 @@ namespace MDC.Escudeiro.Exercicio.Console
 
         public override CommandNode[] GetBranches(CommandNode parent)
         {
-            var commands = new CommandNode[]
+            var commands = new CommandNode[2];
+
+            for (int i = 0; i < commands.Length; i++)
             {
-                new CommandNode
+                commands[i] = new CommandNode
                 {
-                    Action = () =>
-                    {
-                        Inicializar(out int contador);
-                        Incrementar(ref contador);
-
-                        _screenCommand.PrintResult("Usado para indicar que o parâmetro passado pode ser modificado pelo método.");
-                        _screenCommand.PrintBigText("Por padrão, um tipo de referência passado para um método terá " +
-                                                    "todas as alterações feitas em seus valores refletidas fora do método também. " +
-                                                    "Se você atribuir o tipo de referência a um novo tipo de referência dentro do método, " +
-                                                    "essas alterações serão apenas locais para o método.");
-                    },
+                    Action = GetActions(i),
+                    Order = i,
                     Parent = parent,
-                    Order = 0,
-                    Title = "({0}) Definição do ref"
-                },
-                new CommandNode
-                {
-                    Action = () =>
-                    {
-                        Inicializar(out int contador);
-                        Incrementar(ref contador);
-
-                        _screenCommand.PrintResult("Usado para indicar que o parâmetro passado deve ser modificado pelo método.");
-                        _screenCommand.PrintBigText("Usando o modificador out, inicializamos uma variável dentro do método. " +
-                                                    "Como ref, tudo o que acontece no método altera a variável fora do método. " +
-                                                    "Com ref, você tem a opção de não fazer alterações no parâmetro. " +
-                                                    "Ao usar out, você deve inicializar o parâmetro que passa dentro do método.");
-                    },
-                    Parent = parent,
-                    Order = 1,
-                    Title = "({0}) Definição do out"
-                }
-            };
+                    Title = Text.ResourceManager.GetString($"Pergunta-5-{i}"),
+                };
+            }
 
             return commands;
+        }
+
+        private Action GetActions(int index)
+        {
+            return index switch
+            {
+                0 => () =>
+                {
+                    Inicializar(out int contador);
+                    Incrementar(ref contador);
+
+                    _screenCommand.PrintBigText(Text.Resposta_5_0);
+                }
+                ,
+                1 => () =>
+                {
+                    Inicializar(out int contador);
+                    Incrementar(ref contador);
+
+                    _screenCommand.PrintBigText(Text.Resposta_5_1);
+                }
+                ,
+                _ => default,
+            };
         }
     }
 }

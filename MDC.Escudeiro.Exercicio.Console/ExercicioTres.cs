@@ -19,7 +19,7 @@ namespace MDC.Escudeiro.Exercicio.Console
             {
                 if (i % 3 == 0)
                 {
-                    _screenCommand.PrintResult($"{i} é múltiplo de 3");
+                    _screenCommand.PrintResult(string.Format(Text.Resposta_2_0, i));
                 }
             }
         }
@@ -33,7 +33,7 @@ namespace MDC.Escudeiro.Exercicio.Console
                     Action = MultiplosTres,
                     Parent = parent,
                     Order = 0,
-                    Title = "({0}) Imprima todos os múltiplos de 3"
+                    Title = Text.Pergunta_2_0
                 }
             };
 

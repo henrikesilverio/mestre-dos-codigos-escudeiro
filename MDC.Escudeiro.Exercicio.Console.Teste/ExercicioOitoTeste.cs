@@ -18,7 +18,6 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
         public void ExercicioOito_Obter_Ordem_Crescente()
         {
             var exercicio = new ExercicioOito(_screenCommand.Object);
-            exercicio.RemoverTodos();
 
             for (int i = 3; i >= 1; i--)
             {
@@ -26,18 +25,16 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
                     .Setup(x => x.InputValue("Insira o número: "))
                     .Returns(i.ToString());
 
-                exercicio = new ExercicioOito(_screenCommand.Object);
                 exercicio.InserirNumero();
             }
 
-            Assert.Equal("1,2,3", string.Join(",", exercicio.ObterOrdemCrescente()));
+            Assert.Equal("1 | 2 | 3", exercicio.ObterOrdemCrescente());
         }
 
         [Fact(DisplayName = "Imprima os valores em ordem decrescente")]
         public void ExercicioOito_Obter_Ordem_Decrescente()
         {
             var exercicio = new ExercicioOito(_screenCommand.Object);
-            exercicio.RemoverTodos();
 
             for (int i = 1; i <= 3; i++)
             {
@@ -45,11 +42,10 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
                     .Setup(x => x.InputValue("Insira o número: "))
                     .Returns(i.ToString());
 
-                exercicio = new ExercicioOito(_screenCommand.Object);
                 exercicio.InserirNumero();
             }
 
-            Assert.Equal("3,2,1", string.Join(",", exercicio.ObterOrdemDecrescente()));
+            Assert.Equal("3 | 2 | 1", exercicio.ObterOrdemDecrescente());
         }
     }
 }

@@ -120,26 +120,14 @@
   <data name="00" xml:space="preserve">
     <value>({0}) Em quais linguagens o C# foi inspirado?</value>
   </data>
-  <data name="000" xml:space="preserve">
-    <value>A criação do C# foi baseada nas linguagens de programação C, C++ e Java. Deste modo, programadores habituados com uma dessas linguagens são capazes de desenvolver soluções sem maiores dificuldades, pois ela reúne recursos de cada uma destas linguagens base e adiciona novos recursos exclusivos. Em relação a linguagem C, o C# tem foco na compilação de soluções de alto nível, já a linguagem C é voltada para o desenvolvimento de baixo nível. Outras comparações, de acordo com MSDN (2012), o C#, simplifica de modo significativo a complexidade do C++ e introduz novos elementos não disponíveis no Java, tais como: tipos primitivos com valores nulos, delegações, expressões lambda e acesso direto à memória.</value>
-  </data>
   <data name="01" xml:space="preserve">
     <value>({0}) Inicialmente o C# foi criado para qual finalidade?</value>
-  </data>
-  <data name="010" xml:space="preserve">
-    <value>O C# surgiu com a finalidade de possibilitar a criação de soluções executáveis sobre a plataforma .NET Framework, com o intuito de flexibilizar o desenvolvimento de aplicativos. Dessa maneira, o desenvolvedor não cria soluções para um dispositivo eletrônico específico, e sim para a plataforma .NET Framework.</value>
   </data>
   <data name="02" xml:space="preserve">
     <value>({0}) Quais os principais motivos para a Microsoft ter migrado para o Core?</value>
   </data>
-  <data name="020" xml:space="preserve">
-    <value>O .NET Framework é usado para desenvolvimento de aplicações Windows usando Windows Forms , WPF e de aplicações Web usando ASP .NET MVC. O .NET Core é open-source e multiplataforma e suporta UWP e as bibliotecas da ASP .NET Core. A UWP é usada para criar aplicação Windows 10 e a ASP .NET Core é usada para criar aplicações Web para Windows, Linux e Mac.</value>
-  </data>
   <data name="03" xml:space="preserve">
     <value>({0}) Cite as principais diferenças entre .Net Full Framework e .Net Core.</value>
-  </data>
-  <data name="030" xml:space="preserve">
-    <value>O principal motivo foi adicionar as seguintes características e torna-lo o sucessor do .Net framework. Primeiramente, a possibilidade de plataforma cruzada entre diferentes sistemas operacionais para uma mesma solução. O .Net Core possui código-fonte aberto, se tornando um software livre. Ele implementa funcionalidades modernas como programação assíncrona e recursos de alto desempenho. Além de fornecer compatibilidade com contêineres do Docker disponibilizando uma implantação flexível.</value>
   </data>
   <data name="10" xml:space="preserve">
     <value>({0}) Crie uma aplicação que receba os valores A e B. Mostre de forma simples, como utilizar variáveis e manipular dados.</value>
@@ -168,14 +156,20 @@
   <data name="18" xml:space="preserve">
     <value>({0}) Utilizando a biblioteca LINQ crie no console e execute</value>
   </data>
-  <data name="IntroducaoConsole" xml:space="preserve">
-    <value>Trabalhando no Console</value>
+  <data name="20" xml:space="preserve">
+    <value>({0}) Perguntas teóricas sobre POO</value>
+  </data>
+  <data name="21" xml:space="preserve">
+    <value>({0}) Crie uma classe para representar uma pessoa</value>
+  </data>
+  <data name="22" xml:space="preserve">
+    <value>({0}) Faça uma aplicação bancária</value>
+  </data>
+  <data name="23" xml:space="preserve">
+    <value>({0}) Crie uma classe Televisao e uma classe ControleRemoto que pode controlar o volume e trocar os canais da televisão.</value>
   </data>
   <data name="IntroducaoOpcoes" xml:space="preserve">
     <value>Escolha uma opção</value>
-  </data>
-  <data name="IntroducaoTeorica" xml:space="preserve">
-    <value>Perguntas teóricas de introdução</value>
   </data>
   <data name="MenuIntroducao" xml:space="preserve">
     <value>Precione ↑ e ↓ para selecionar e Enter para escolher | Precione Esc para sair</value>
@@ -186,16 +180,16 @@
   <data name="MenuIntroducaoVoltar" xml:space="preserve">
     <value>Precione ← para voltar | Precione Esc para sair</value>
   </data>
-  <data name="OpcaoDois" xml:space="preserve">
-    <value>({0}) Validar os exercícios de console</value>
-  </data>
-  <data name="OpcaoTres" xml:space="preserve">
-    <value>({0}) Validar os exercícios de programação orientada a objetos</value>
-  </data>
-  <data name="OpcaoUm" xml:space="preserve">
-    <value>({0}) Respostas sobre a parte teóricas</value>
-  </data>
   <data name="Saudacoes" xml:space="preserve">
     <value>Bem-vindo ao território de .Net do Mestre dos Códigos</value>
+  </data>
+  <data name="Titulo-0" xml:space="preserve">
+    <value>({0}) Respostas sobre a parte teóricas</value>
+  </data>
+  <data name="Titulo-1" xml:space="preserve">
+    <value>({0}) Validar os exercícios de console</value>
+  </data>
+  <data name="Titulo-2" xml:space="preserve">
+    <value>({0}) Validar os exercícios de programação orientada a objetos</value>
   </data>
 </root>
