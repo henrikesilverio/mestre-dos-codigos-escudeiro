@@ -196,7 +196,7 @@ namespace MDC.Escudeiro.Exercicio.Teorico {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Programação orientada a objetos (POO, ou OOP segundo as suas siglas em inglês) é um paradigma de programação baseado no conceito de &quot;objetos&quot;, que podem conter dados na forma de campos, também conhecidos como atributos, e códigos, na forma de procedimentos, também conhecidos como métodos. Uma característica de objetos é que um procedimento de objeto pode acessar, e geralmente modificar, os campos de dados do objeto com o qual eles estão associados (objetos possuem uma noção de &quot;this&quot; (este) ou &quot;self&quot; (própr [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Resposta_1_0 {
             get {
@@ -205,7 +205,7 @@ namespace MDC.Escudeiro.Exercicio.Teorico {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Em programação orientada a objetos, polimorfismo é o princípio pelo qual duas ou mais classes derivadas da mesma superclasse podem invocar métodos que têm a mesma assinatura, mas comportamentos distintos..
         /// </summary>
         internal static string Resposta_1_1 {
             get {
@@ -214,7 +214,7 @@ namespace MDC.Escudeiro.Exercicio.Teorico {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Abstração é a habilidade de concentrar nos aspectos essenciais de um contexto qualquer, ignorando características menos importantes ou acidentais. Em modelagem orientada a objetos, uma classe é uma abstração de entidades existentes no domínio do sistema de software..
         /// </summary>
         internal static string Resposta_1_2 {
             get {
@@ -223,7 +223,7 @@ namespace MDC.Escudeiro.Exercicio.Teorico {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Encapsulamento vem de encapsular, que em programação orientada a objetos significa separar o programa em partes, o mais isolado possível. A idéia é tornar o software mais flexível, fácil de modificar e de criar novas implementações. O Encapsulamento serve para controlar o acesso aos atributos e métodos de uma classe..
         /// </summary>
         internal static string Resposta_1_3 {
             get {
@@ -232,7 +232,7 @@ namespace MDC.Escudeiro.Exercicio.Teorico {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Uma classe abstrata pode conter métodos completos ou incompletos. Uma Interface pode conter apenas a assinatura de um método, mas nenhum corpo ou implementação. Portanto, em uma classe abstrata, pode-­se implementar métodos, mas em uma Interface, não. Suponha que vamos criar várias classes que têm métodos em comum e outros métodos funcionam diferente para cada classe. Uma forma de fazer isso é usar as classes abstratas..
         /// </summary>
         internal static string Resposta_1_4 {
             get {
@@ -241,7 +241,10 @@ namespace MDC.Escudeiro.Exercicio.Teorico {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to IDisposable fornece um mecanismo para liberar recursos não gerenciados.
+        ///IComparable define um método de comparação de tipo específico generalizado que implementa uma classe ou um tipo de valor para solicitar ou classificar suas instâncias.
+        ///ICloneable dá suporte à clonagem, que cria uma nova instância de uma classe com o mesmo valor de uma instância existente.
+        ///IEnumerable expõe um enumerador que dá suporte a uma iteração simples em uma coleção não genérica..
         /// </summary>
         internal static string Resposta_1_5 {
             get {
@@ -250,7 +253,7 @@ namespace MDC.Escudeiro.Exercicio.Teorico {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Não, essa estratégia não é permitida no C# devido a complicações acarretadas pelo uso de herança múltipla. Apesar disso, o C# possui herança transitiva, isto é, que permite herança através de hierarquia sequencial, disponibilizando os membros herdados da classe avô e da classe pai para a classe neto. Outra alternativa é a utilização de interfaces implementadas..
         /// </summary>
         internal static string Resposta_1_6 {
             get {

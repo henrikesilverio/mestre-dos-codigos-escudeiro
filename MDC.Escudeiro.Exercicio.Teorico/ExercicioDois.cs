@@ -4,11 +4,11 @@ using MDC.Escudeiro.Domain.Models;
 
 namespace MDC.Escudeiro.Exercicio.Teorico
 {
-    public class ExercicioUm : AbstractExercise
+    public class ExercicioDois : AbstractExercise
     {
         private readonly IScreenCommand _screenCommand;
 
-        public ExercicioUm(IScreenCommand screenCommand)
+        public ExercicioDois(IScreenCommand screenCommand)
         {
             _screenCommand = screenCommand;
         }
@@ -19,13 +19,13 @@ namespace MDC.Escudeiro.Exercicio.Teorico
 
             for (int i = 0; i < commands.Length; i++)
             {
-                var resposta = Text.ResourceManager.GetString($"Resposta-0-{i}");
+                var resposta = Text.ResourceManager.GetString($"Resposta-1-{i}");
                 commands[i] = new CommandNode
                 {
                     Action = () => _screenCommand.PrintBigText(resposta),
                     Order = i,
                     Parent = parent,
-                    Title = Text.ResourceManager.GetString($"Pergunta-0-{i}"),
+                    Title = Text.ResourceManager.GetString($"Pergunta-1-{i}"),
                 };
             }
 

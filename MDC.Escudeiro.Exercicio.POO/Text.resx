@@ -117,70 +117,97 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="00" xml:space="preserve">
-    <value>({0}) Perguntas teóricas sobre C#</value>
+  <data name="ContaCorrente" xml:space="preserve">
+    <value>Conta Corrente</value>
   </data>
-  <data name="01" xml:space="preserve">
-    <value>({0}) Perguntas teóricas sobre POO</value>
+  <data name="ContaEspecial" xml:space="preserve">
+    <value>Conta Especial</value>
   </data>
-  <data name="10" xml:space="preserve">
-    <value>({0}) Crie uma aplicação que receba os valores A e B. Mostre de forma simples, como utilizar variáveis e manipular dados.</value>
+  <data name="ContaNaoCriada" xml:space="preserve">
+    <value>A conta não foi criada.</value>
   </data>
-  <data name="11" xml:space="preserve">
-    <value>({0}) Crie uma aplicação que receba nome e salário de N funcionários. Utilize a repetição for e while.</value>
+  <data name="ControleNaoCriado" xml:space="preserve">
+    <value>O controle não foi criado.</value>
   </data>
-  <data name="12" xml:space="preserve">
-    <value>({0}) Crie uma aplicação que imprima todos os múltiplos de 3, entre 1 e 100. Utilize a repetição while.</value>
+  <data name="InserirAltura" xml:space="preserve">
+    <value>Insira a altura: </value>
   </data>
-  <data name="13" xml:space="preserve">
-    <value>({0}) Crie uma aplicação que receba N alunos com suas respectivas notas. Use foreach para a estrutura de repetição.</value>
+  <data name="InserirCanal" xml:space="preserve">
+    <value>Insira o número do canal: </value>
   </data>
-  <data name="14" xml:space="preserve">
-    <value>({0}) Crie uma aplicação que calcule a fórmula de Bhaskara.</value>
+  <data name="InserirData" xml:space="preserve">
+    <value>Insira a data de nascimento (dd/MM/yyyy): </value>
   </data>
-  <data name="15" xml:space="preserve">
-    <value>({0}) Crie uma aplicação que demonstre a diferença entre REF e OUT.</value>
+  <data name="InserirLimite" xml:space="preserve">
+    <value>Insira o limite: </value>
   </data>
-  <data name="16" xml:space="preserve">
-    <value>({0}) Crie uma aplicação que leia 4 números inteiros e calcular a soma dos que forem pares.</value>
+  <data name="InserirNome" xml:space="preserve">
+    <value>Insira o nome: </value>
   </data>
-  <data name="17" xml:space="preserve">
-    <value>({0}) Crie uma aplicação que leia N valores decimais, imprima os valores em ordem crescente e decrescente.</value>
+  <data name="InserirNumeroConta" xml:space="preserve">
+    <value>Insira o número da conta: </value>
   </data>
-  <data name="18" xml:space="preserve">
-    <value>({0}) Utilizando a biblioteca LINQ crie no console e execute</value>
+  <data name="InserirSaldo" xml:space="preserve">
+    <value>Insira o saldo inicial: </value>
   </data>
-  <data name="20" xml:space="preserve">
-    <value>({0}) Crie uma classe para representar uma pessoa</value>
+  <data name="InserirTaxaOperacao" xml:space="preserve">
+    <value>Insira a taxa de operação (0 a 100): </value>
   </data>
-  <data name="21" xml:space="preserve">
-    <value>({0}) Faça uma aplicação bancária</value>
+  <data name="InserirTipoConta" xml:space="preserve">
+    <value>Insira o tipo da conta: </value>
   </data>
-  <data name="22" xml:space="preserve">
-    <value>({0}) Crie uma classe Televisao e uma classe ControleRemoto que pode controlar o volume e trocar os canais da televisão.</value>
+  <data name="InserirTipoControle" xml:space="preserve">
+    <value>Insira o tipo do controle: </value>
   </data>
-  <data name="IntroducaoOpcoes" xml:space="preserve">
-    <value>Escolha uma opção</value>
+  <data name="InserirValor" xml:space="preserve">
+    <value>Insira o valor: </value>
   </data>
-  <data name="MenuIntroducao" xml:space="preserve">
-    <value>Precione ↑ e ↓ para selecionar e Enter para escolher | Precione Esc para sair</value>
+  <data name="Pergunta-1-0" xml:space="preserve">
+    <value>({0}) Incluir a pessoa</value>
   </data>
-  <data name="MenuIntroducaoEntrarVoltar" xml:space="preserve">
-    <value>Precione ↑ e ↓ para selecionar e Enter para escolher | Precione ← para voltar | Precione Esc para sair</value>
+  <data name="Pergunta-1-1" xml:space="preserve">
+    <value>({0}) Calcular a idade</value>
   </data>
-  <data name="MenuIntroducaoVoltar" xml:space="preserve">
-    <value>Precione ← para voltar | Precione Esc para sair</value>
+  <data name="Pergunta-1-2" xml:space="preserve">
+    <value>({0}) Imprimir dados</value>
   </data>
-  <data name="Saudacoes" xml:space="preserve">
-    <value>Bem-vindo ao território de .Net do Mestre dos Códigos</value>
+  <data name="Pergunta-2-0" xml:space="preserve">
+    <value>({0}) Criar uma conta</value>
   </data>
-  <data name="Titulo-0" xml:space="preserve">
-    <value>({0}) Respostas sobre a parte teóricas</value>
+  <data name="Pergunta-2-1" xml:space="preserve">
+    <value>({0}) Depositar</value>
   </data>
-  <data name="Titulo-1" xml:space="preserve">
-    <value>({0}) Validar os exercícios de console</value>
+  <data name="Pergunta-2-2" xml:space="preserve">
+    <value>({0}) Sacar</value>
   </data>
-  <data name="Titulo-2" xml:space="preserve">
-    <value>({0}) Validar os exercícios de POO</value>
+  <data name="Pergunta-3-0" xml:space="preserve">
+    <value>({0}) Criar Controle</value>
+  </data>
+  <data name="Pergunta-3-1" xml:space="preserve">
+    <value>({0}) Aumentar Volume</value>
+  </data>
+  <data name="Pergunta-3-2" xml:space="preserve">
+    <value>({0}) Diminuir Volume</value>
+  </data>
+  <data name="Pergunta-3-3" xml:space="preserve">
+    <value>({0}) Aumentar Número Canal</value>
+  </data>
+  <data name="Pergunta-3-4" xml:space="preserve">
+    <value>({0}) Diminuir Número Canal</value>
+  </data>
+  <data name="Pergunta-3-5" xml:space="preserve">
+    <value>({0}) Ir para o canal</value>
+  </data>
+  <data name="Resposta-1-0" xml:space="preserve">
+    <value>A idade é: {0}</value>
+  </data>
+  <data name="TaxaDeOperacao" xml:space="preserve">
+    <value>Taxa de operação: {0}</value>
+  </data>
+  <data name="TipoConta" xml:space="preserve">
+    <value>Tipo de conta (0) - Corrente | (1) - Especial</value>
+  </data>
+  <data name="TipoControle" xml:space="preserve">
+    <value>Tipo de controle (0) - Direto na TV | (1) - Remoto</value>
   </data>
 </root>

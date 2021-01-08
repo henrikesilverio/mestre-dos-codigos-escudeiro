@@ -6,16 +6,15 @@ namespace MDC.Escudeiro
 {
     public class ExercisePOOFactory : IExerciseFactory
     {
-        public int Size => 4;
+        public int Size => 3;
 
         public AbstractExercise Manufacture(int index)
         {
             return index switch
             {
-                0 => new ExercicioUm(_screenCommandConsole),
-                1 => new ExercicioDois(_screenCommandConsole),
-                2 => new ExercicioTres(_screenCommandConsole),
-                3 => new ExercicioQuatro(_screenCommandConsole),
+                0 => new ExercicioDois(_screenCommandConsole),
+                1 => new ExercicioTres(_screenCommandConsole),
+                2 => new ExercicioQuatro(_screenCommandConsole),
                 _ => default,
             };
         }

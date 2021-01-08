@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MDC.Escudeiro.Exercicio.Con
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MDC.Escudeiro.Exercicio.POO", "MDC.Escudeiro.Exercicio.POO\MDC.Escudeiro.Exercicio.POO.csproj", "{3C98ED8D-5B60-4B2D-924F-DE41653702C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDC.Escudeiro.Exercicio.Teorico", "MDC.Escudeiro.Exercicio.Teorico\MDC.Escudeiro.Exercicio.Teorico.csproj", "{8DFDFB01-E543-455C-AE2E-7599270929C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MDC.Escudeiro.Exercicio.Teorico", "MDC.Escudeiro.Exercicio.Teorico\MDC.Escudeiro.Exercicio.Teorico.csproj", "{8DFDFB01-E543-455C-AE2E-7599270929C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDC.Escudeiro.Exercicio.POO.Teste", "MDC.Escudeiro.Exercicio.POO.Teste\MDC.Escudeiro.Exercicio.POO.Teste.csproj", "{989E78E5-9CE7-421E-90B4-204D2C5724FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{8DFDFB01-E543-455C-AE2E-7599270929C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DFDFB01-E543-455C-AE2E-7599270929C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DFDFB01-E543-455C-AE2E-7599270929C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{989E78E5-9CE7-421E-90B4-204D2C5724FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{989E78E5-9CE7-421E-90B4-204D2C5724FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{989E78E5-9CE7-421E-90B4-204D2C5724FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{989E78E5-9CE7-421E-90B4-204D2C5724FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

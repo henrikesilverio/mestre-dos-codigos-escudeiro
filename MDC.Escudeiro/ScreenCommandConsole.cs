@@ -31,6 +31,16 @@ namespace MDC.Escudeiro
             return value;
         }
 
+        public void PrintError(string text)
+        {
+            WriteWithFixedSide(text, ConsoleColor.DarkRed);
+        }
+
+        public void PrintInfo(string text)
+        {
+            WriteWithFixedSide(text, ConsoleColor.DarkGray);
+        }
+
         public void PrintOption(string text, string markCharacter)
         {
             var consoleColor = MarkCharacter == markCharacter ? ConsoleColor.Cyan : ConsoleColor.DarkGray;

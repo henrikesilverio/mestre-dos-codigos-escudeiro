@@ -34,7 +34,7 @@ namespace MDC.Escudeiro.Exercicio.Console
             {
                 new CommandNode
                 {
-                    Action = () => 
+                    Action = () =>
                     {
                         var raizes = CalcularBhaskara();
                         _screenCommand.PrintResult(string.Format(Text.Resposta_4_0, raizes.Item1, raizes.Item2));

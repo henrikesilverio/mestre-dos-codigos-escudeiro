@@ -61,7 +61,7 @@ namespace MDC.Escudeiro {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ({0}) Em quais linguagens o C# foi inspirado?.
+        ///   Looks up a localized string similar to ({0}) Perguntas teóricas sobre C#.
         /// </summary>
         public static string _00 {
             get {
@@ -70,29 +70,11 @@ namespace MDC.Escudeiro {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ({0}) Inicialmente o C# foi criado para qual finalidade?.
+        ///   Looks up a localized string similar to ({0}) Perguntas teóricas sobre POO.
         /// </summary>
         public static string _01 {
             get {
                 return ResourceManager.GetString("01", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ({0}) Quais os principais motivos para a Microsoft ter migrado para o Core?.
-        /// </summary>
-        public static string _02 {
-            get {
-                return ResourceManager.GetString("02", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ({0}) Cite as principais diferenças entre .Net Full Framework e .Net Core..
-        /// </summary>
-        public static string _03 {
-            get {
-                return ResourceManager.GetString("03", resourceCulture);
             }
         }
         
@@ -178,7 +160,7 @@ namespace MDC.Escudeiro {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ({0}) Perguntas teóricas sobre POO.
+        ///   Looks up a localized string similar to ({0}) Crie uma classe para representar uma pessoa.
         /// </summary>
         public static string _20 {
             get {
@@ -187,7 +169,7 @@ namespace MDC.Escudeiro {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ({0}) Crie uma classe para representar uma pessoa.
+        ///   Looks up a localized string similar to ({0}) Faça uma aplicação bancária.
         /// </summary>
         public static string _21 {
             get {
@@ -196,20 +178,11 @@ namespace MDC.Escudeiro {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ({0}) Faça uma aplicação bancária.
+        ///   Looks up a localized string similar to ({0}) Crie uma classe Televisao e uma classe ControleRemoto que pode controlar o volume e trocar os canais da televisão..
         /// </summary>
         public static string _22 {
             get {
                 return ResourceManager.GetString("22", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ({0}) Crie uma classe Televisao e uma classe ControleRemoto que pode controlar o volume e trocar os canais da televisão..
-        /// </summary>
-        public static string _23 {
-            get {
-                return ResourceManager.GetString("23", resourceCulture);
             }
         }
         
@@ -277,7 +250,7 @@ namespace MDC.Escudeiro {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ({0}) Validar os exercícios de programação orientada a objetos.
+        ///   Looks up a localized string similar to ({0}) Validar os exercícios de POO.
         /// </summary>
         public static string Titulo_2 {
             get {

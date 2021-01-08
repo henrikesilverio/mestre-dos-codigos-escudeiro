@@ -12,9 +12,9 @@ namespace MDC.Escudeiro
         private static int _selectedOption = 0;
         private static ConsoleColor _selectedOptionColor = ConsoleColor.Cyan;
         private static CommandNode _currentCommandNode;
-        private static ExerciseTheoreticalFactory _exerciseTheoreticalFactory = new ExerciseTheoreticalFactory();
-        private static ExerciseConsoleFactory _exerciseConsoleFactory = new ExerciseConsoleFactory();
-        private static ExercisePOOFactory _exercisePOOFactory = new ExercisePOOFactory();
+        private static readonly ExerciseTheoreticalFactory _exerciseTheoreticalFactory = new ExerciseTheoreticalFactory();
+        private static readonly ExerciseConsoleFactory _exerciseConsoleFactory = new ExerciseConsoleFactory();
+        private static readonly ExercisePOOFactory _exercisePOOFactory = new ExercisePOOFactory();
 
         public static void Main(string[] args)
         {
@@ -81,26 +81,10 @@ namespace MDC.Escudeiro
 
             node.Branches = new CommandNode[]
             {
-                BuildCommandNodeQuestion(0, node, _exerciseTheoreticalFactory),
+                BuildCommandNodeExercise(0, node, _exerciseTheoreticalFactory),
                 BuildCommandNodeExercise(1, node, _exerciseConsoleFactory),
                 BuildCommandNodeExercise(2, node, _exercisePOOFactory)
             };
-
-            return node;
-        }
-
-        private static CommandNode BuildCommandNodeQuestion(int order, CommandNode parent, IExerciseFactory exerciseFactory)
-        {
-            var node = new CommandNode
-            {
-                Action = ActionBranchTitle,
-                Parent = parent,
-                Title = Text.ResourceManager.GetString($"Titulo-{order}"),
-                Order = order
-            };
-
-            var exercise = exerciseFactory.Manufacture(order);
-            node.Branches = exercise.GetBranches(node);
 
             return node;
         }
