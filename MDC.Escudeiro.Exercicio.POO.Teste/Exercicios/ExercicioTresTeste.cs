@@ -2,7 +2,7 @@
 using Moq;
 using Xunit;
 
-namespace MDC.Escudeiro.Exercicio.POO.Teste
+namespace MDC.Escudeiro.Exercicio.POO.Teste.Exercicios
 {
     [Trait("Crie uma aplicação bancária", "todos")]
     public class ExercicioTresTeste

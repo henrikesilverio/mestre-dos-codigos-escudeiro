@@ -178,12 +178,15 @@
     <value>Uma classe abstrata pode conter métodos completos ou incompletos. Uma Interface pode conter apenas a assinatura de um método, mas nenhum corpo ou implementação. Portanto, em uma classe abstrata, pode-­se implementar métodos, mas em uma Interface, não. Suponha que vamos criar várias classes que têm métodos em comum e outros métodos funcionam diferente para cada classe. Uma forma de fazer isso é usar as classes abstratas.</value>
   </data>
   <data name="Resposta-1-5" xml:space="preserve">
-    <value>IDisposable fornece um mecanismo para liberar recursos não gerenciados.
-IComparable define um método de comparação de tipo específico generalizado que implementa uma classe ou um tipo de valor para solicitar ou classificar suas instâncias.
-ICloneable dá suporte à clonagem, que cria uma nova instância de uma classe com o mesmo valor de uma instância existente.
-IEnumerable expõe um enumerador que dá suporte a uma iteração simples em uma coleção não genérica.</value>
+    <value>IDisposable fornece um mecanismo para liberar recursos não gerenciados. IComparable define um método de comparação de tipo específico generalizado que implementa uma classe ou um tipo de valor para solicitar ou classificar suas instâncias. ICloneable dá suporte à clonagem, que cria uma nova instância de uma classe com o mesmo valor de uma instância existente. IEnumerable expõe um enumerador que dá suporte a uma iteração simples em uma coleção não genérica.</value>
   </data>
   <data name="Resposta-1-6" xml:space="preserve">
     <value>Não, essa estratégia não é permitida no C# devido a complicações acarretadas pelo uso de herança múltipla. Apesar disso, o C# possui herança transitiva, isto é, que permite herança através de hierarquia sequencial, disponibilizando os membros herdados da classe avô e da classe pai para a classe neto. Outra alternativa é a utilização de interfaces implementadas.</value>
+  </data>
+  <data name="Titulo-0" xml:space="preserve">
+    <value>({0}) Perguntas teóricas sobre C#.</value>
+  </data>
+  <data name="Titulo-1" xml:space="preserve">
+    <value>({0}) Perguntas teóricas sobre POO.</value>
   </data>
 </root>

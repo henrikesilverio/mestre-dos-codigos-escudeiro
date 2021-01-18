@@ -1,4 +1,5 @@
 ﻿using MDC.Escudeiro.Domain.Abstract;
+using MDC.Escudeiro.Domain.Builders;
 using MDC.Escudeiro.Domain.Interfaces;
 using MDC.Escudeiro.Domain.Models;
 using System;
@@ -6,7 +7,7 @@ using System.Linq.Expressions;
 
 namespace MDC.Escudeiro.Exercicio.POO
 {
-    public class ExercicioTres : AbstractExercise
+    public class ExercicioTres : ExecicioBase, INodeBuilder
     {
         private readonly IScreenCommand _screenCommand;
         private TipoConta _tipoConta;
@@ -15,6 +16,18 @@ namespace MDC.Escudeiro.Exercicio.POO
         public ExercicioTres(IScreenCommand screenCommand)
         {
             _screenCommand = screenCommand;
+        }
+
+        public CommandNode Build()
+        {
+            var arvore = new RootCommandNodeBuilder()
+                .SetTitle(Text.Titulo_1)
+                .AddChild(() => CriarConta(), Text.Pergunta_2_0)
+                .AddChild(() => Depositar(), Text.Pergunta_2_1)
+                .AddChild(() => Sacar(), Text.Pergunta_2_2)
+                .Build();
+
+            return arvore;
         }
 
         public ContaBancariaAbstract CriarConta()
@@ -38,24 +51,6 @@ namespace MDC.Escudeiro.Exercicio.POO
         public void ImprimirDados(IImprimivel conta)
         {
             _screenCommand.PrintResult(conta.MostrarDados());
-        }
-
-        public override CommandNode[] GetBranches(CommandNode parent)
-        {
-            var commands = new CommandNode[3];
-
-            for (int i = 0; i < commands.Length; i++)
-            {
-                commands[i] = new CommandNode
-                {
-                    Action = GetActions(i),
-                    Order = i,
-                    Parent = parent,
-                    Title = Text.ResourceManager.GetString($"Pergunta-2-{i}"),
-                };
-            }
-
-            return commands;
         }
 
         private void ExecutarOperacao(Expression<Func<ContaBancariaAbstract, Action<double>>> expressao)
@@ -109,17 +104,6 @@ namespace MDC.Escudeiro.Exercicio.POO
                     Saldo = Convert.ToDouble(saldo, GetNumberFormatInfo(saldo))
                 };
             }
-        }
-
-        private Action GetActions(int index)
-        {
-            return index switch
-            {
-                0 => () => CriarConta(),
-                1 => () => Depositar(),
-                2 => () => Sacar(),
-                _ => default,
-            };
         }
     }
 }

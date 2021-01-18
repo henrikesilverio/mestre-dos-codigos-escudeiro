@@ -7,9 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MDC.Escudeiro.Domain\MDC.Escudeiro.Domain.csproj" />
-    <ProjectReference Include="..\MDC.Escudeiro.Exercicio.Console\MDC.Escudeiro.Exercicio.Console.csproj" />
-    <ProjectReference Include="..\MDC.Escudeiro.Exercicio.POO\MDC.Escudeiro.Exercicio.POO.csproj" />
-    <ProjectReference Include="..\MDC.Escudeiro.Exercicio.Teorico\MDC.Escudeiro.Exercicio.Teorico.csproj" />
+    <ProjectReference Include="..\MDC.Escudeiro.Exercicio\MDC.Escudeiro.Exercicio.csproj" />
   </ItemGroup>
 
   <ItemGroup>

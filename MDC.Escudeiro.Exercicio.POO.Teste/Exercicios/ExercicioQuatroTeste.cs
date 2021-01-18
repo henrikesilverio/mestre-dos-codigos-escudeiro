@@ -2,7 +2,7 @@
 using Moq;
 using Xunit;
 
-namespace MDC.Escudeiro.Exercicio.POO.Teste
+namespace MDC.Escudeiro.Exercicio.POO.Teste.Exercicios
 {
     [Trait("Crie uma classe Televisao e uma classe ControleRemoto que pode controlar o volume e trocar os canais da televisão", "todos")]
     public class ExercicioQuatroTeste

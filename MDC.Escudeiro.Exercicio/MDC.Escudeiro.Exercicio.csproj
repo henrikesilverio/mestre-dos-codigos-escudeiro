@@ -5,25 +5,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Text.resx~RF5c84a1a.TMP" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\MDC.Escudeiro.Domain\MDC.Escudeiro.Domain.csproj" />
+    <ProjectReference Include="..\MDC.Escudeiro.Exercicio.Console\MDC.Escudeiro.Exercicio.Console.csproj" />
+    <ProjectReference Include="..\MDC.Escudeiro.Exercicio.POO\MDC.Escudeiro.Exercicio.POO.csproj" />
+    <ProjectReference Include="..\MDC.Escudeiro.Exercicio.Teorico\MDC.Escudeiro.Exercicio.Teorico.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Text.Designer.cs">
+      <DependentUpon>Text.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Text.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Text.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Text.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>
   </ItemGroup>
 

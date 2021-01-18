@@ -241,10 +241,7 @@ namespace MDC.Escudeiro.Exercicio.Teorico {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IDisposable fornece um mecanismo para liberar recursos não gerenciados.
-        ///IComparable define um método de comparação de tipo específico generalizado que implementa uma classe ou um tipo de valor para solicitar ou classificar suas instâncias.
-        ///ICloneable dá suporte à clonagem, que cria uma nova instância de uma classe com o mesmo valor de uma instância existente.
-        ///IEnumerable expõe um enumerador que dá suporte a uma iteração simples em uma coleção não genérica..
+        ///   Looks up a localized string similar to IDisposable fornece um mecanismo para liberar recursos não gerenciados. IComparable define um método de comparação de tipo específico generalizado que implementa uma classe ou um tipo de valor para solicitar ou classificar suas instâncias. ICloneable dá suporte à clonagem, que cria uma nova instância de uma classe com o mesmo valor de uma instância existente. IEnumerable expõe um enumerador que dá suporte a uma iteração simples em uma coleção não genérica..
         /// </summary>
         internal static string Resposta_1_5 {
             get {
@@ -258,6 +255,24 @@ namespace MDC.Escudeiro.Exercicio.Teorico {
         internal static string Resposta_1_6 {
             get {
                 return ResourceManager.GetString("Resposta-1-6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ({0}) Perguntas teóricas sobre C#..
+        /// </summary>
+        internal static string Titulo_0 {
+            get {
+                return ResourceManager.GetString("Titulo-0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ({0}) Perguntas teóricas sobre POO..
+        /// </summary>
+        internal static string Titulo_1 {
+            get {
+                return ResourceManager.GetString("Titulo-1", resourceCulture);
             }
         }
     }

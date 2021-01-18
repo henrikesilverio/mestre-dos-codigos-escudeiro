@@ -5,7 +5,7 @@ namespace MDC.Escudeiro
 {
     public class ScreenCommandConsole : IScreenCommand
     {
-        public string MarkCharacter { get; set; }
+        public string MarkCharacter { get; } = "*";
 
         public string InputValue(string text)
         {

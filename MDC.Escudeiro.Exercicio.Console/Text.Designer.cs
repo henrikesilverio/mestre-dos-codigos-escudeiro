@@ -124,6 +124,24 @@ namespace MDC.Escudeiro.Exercicio.Console {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to O número consultado não foi encontrado..
+        /// </summary>
+        internal static string NumeroNaoEncontrado {
+            get {
+                return ResourceManager.GetString("NumeroNaoEncontrado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Os pares não foram encontrados..
+        /// </summary>
+        internal static string ParesNaoEncontrados {
+            get {
+                return ResourceManager.GetString("ParesNaoEncontrados", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ({0}) Some esses 2 valores.
         /// </summary>
         internal static string Pergunta_0_0 {
@@ -178,7 +196,7 @@ namespace MDC.Escudeiro.Exercicio.Console {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ({0}) Imprima o maior salário.
+        ///   Looks up a localized string similar to ({0}) Imprimir o maior salário.
         /// </summary>
         internal static string Pergunta_1_1 {
             get {
@@ -187,7 +205,7 @@ namespace MDC.Escudeiro.Exercicio.Console {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ({0}) Imprima o menor salário.
+        ///   Looks up a localized string similar to ({0}) Imprimir o menor salário.
         /// </summary>
         internal static string Pergunta_1_2 {
             get {
@@ -196,7 +214,7 @@ namespace MDC.Escudeiro.Exercicio.Console {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ({0}) Imprima todos os múltiplos de 3.
+        ///   Looks up a localized string similar to ({0}) Imprimir todos os múltiplos de 3.
         /// </summary>
         internal static string Pergunta_2_0 {
             get {
@@ -214,7 +232,7 @@ namespace MDC.Escudeiro.Exercicio.Console {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ({0}) Imprima todos os alunos com média superior a 7.
+        ///   Looks up a localized string similar to ({0}) Imprimir todos os alunos com média superior a 7.
         /// </summary>
         internal static string Pergunta_3_1 {
             get {
@@ -304,7 +322,7 @@ namespace MDC.Escudeiro.Exercicio.Console {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ({0}) Retorne apenas o número informado.
+        ///   Looks up a localized string similar to ({0}) Retornar apenas o número informado.
         /// </summary>
         internal static string Pergunta_8_10 {
             get {
@@ -322,7 +340,7 @@ namespace MDC.Escudeiro.Exercicio.Console {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ({0}) Imprima apenas o primeiro número da lista.
+        ///   Looks up a localized string similar to ({0}) Imprimir apenas o primeiro número da lista.
         /// </summary>
         internal static string Pergunta_8_3 {
             get {
@@ -331,7 +349,7 @@ namespace MDC.Escudeiro.Exercicio.Console {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ({0}) Imprima apenas o ultimo número da lista.
+        ///   Looks up a localized string similar to ({0}) Imprimir apenas o ultimo número da lista.
         /// </summary>
         internal static string Pergunta_8_4 {
             get {
@@ -340,7 +358,7 @@ namespace MDC.Escudeiro.Exercicio.Console {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ({0}) Insira um número no início da lista.
+        ///   Looks up a localized string similar to ({0}) Inserir um número no início da lista.
         /// </summary>
         internal static string Pergunta_8_5 {
             get {
@@ -349,7 +367,7 @@ namespace MDC.Escudeiro.Exercicio.Console {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ({0}) Insira um número no final da lista.
+        ///   Looks up a localized string similar to ({0}) Inserir um número no final da lista.
         /// </summary>
         internal static string Pergunta_8_6 {
             get {
@@ -358,7 +376,7 @@ namespace MDC.Escudeiro.Exercicio.Console {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ({0}) Remova o primeiro número.
+        ///   Looks up a localized string similar to ({0}) Remover o primeiro número.
         /// </summary>
         internal static string Pergunta_8_7 {
             get {
@@ -367,7 +385,7 @@ namespace MDC.Escudeiro.Exercicio.Console {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ({0}) Remova o último número.
+        ///   Looks up a localized string similar to ({0}) Remover o último número.
         /// </summary>
         internal static string Pergunta_8_8 {
             get {
@@ -376,7 +394,7 @@ namespace MDC.Escudeiro.Exercicio.Console {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ({0}) Retorne apenas os números pares.
+        ///   Looks up a localized string similar to ({0}) Retornar apenas os números pares.
         /// </summary>
         internal static string Pergunta_8_9 {
             get {
@@ -578,7 +596,7 @@ namespace MDC.Escudeiro.Exercicio.Console {
         /// </summary>
         internal static string Resposta_8_10 {
             get {
-                return ResourceManager.GetString("Resposta_8_10", resourceCulture);
+                return ResourceManager.GetString("Resposta-8-10", resourceCulture);
             }
         }
         
@@ -615,6 +633,87 @@ namespace MDC.Escudeiro.Exercicio.Console {
         internal static string Resposta_8_9 {
             get {
                 return ResourceManager.GetString("Resposta-8-9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ({0}) Crie uma aplicação que receba os valores A e B. Mostre de forma simples, como utilizar variáveis e manipular dados..
+        /// </summary>
+        internal static string Titulo_0 {
+            get {
+                return ResourceManager.GetString("Titulo-0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ({0}) Crie uma aplicação que receba nome e salário de N funcionários. Utilize a repetição for e while..
+        /// </summary>
+        internal static string Titulo_1 {
+            get {
+                return ResourceManager.GetString("Titulo-1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ({0}) Crie uma aplicação que imprima todos os múltiplos de 3, entre 1 e 100. Utilize a repetição while..
+        /// </summary>
+        internal static string Titulo_2 {
+            get {
+                return ResourceManager.GetString("Titulo-2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ({0}) Crie uma aplicação que receba N alunos com suas respectivas notas. Use foreach para a estrutura de repetição..
+        /// </summary>
+        internal static string Titulo_3 {
+            get {
+                return ResourceManager.GetString("Titulo-3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ({0}) Crie uma aplicação que calcule a fórmula de Bhaskara..
+        /// </summary>
+        internal static string Titulo_4 {
+            get {
+                return ResourceManager.GetString("Titulo-4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ({0}) Crie uma aplicação que demonstre a diferença entre REF e OUT..
+        /// </summary>
+        internal static string Titulo_5 {
+            get {
+                return ResourceManager.GetString("Titulo-5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ({0}) Crie uma aplicação que leia 4 números inteiros e calcular a soma dos que forem pares..
+        /// </summary>
+        internal static string Titulo_6 {
+            get {
+                return ResourceManager.GetString("Titulo-6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ({0}) Crie uma aplicação que leia N valores decimais, imprima os valores em ordem crescente e decrescente..
+        /// </summary>
+        internal static string Titulo_7 {
+            get {
+                return ResourceManager.GetString("Titulo-7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ({0}) Utilizando a biblioteca LINQ crie no console e execute..
+        /// </summary>
+        internal static string Titulo_8 {
+            get {
+                return ResourceManager.GetString("Titulo-8", resourceCulture);
             }
         }
     }

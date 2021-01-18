@@ -2,7 +2,7 @@
 using Moq;
 using Xunit;
 
-namespace MDC.Escudeiro.Exercicio.Console.Teste
+namespace MDC.Escudeiro.Exercicio.Console.Teste.Exercicios
 {
     [Trait("Utilizando a biblioteca LINQ crie no console e execute", "todos")]
     public class ExercicioNoveTeste
@@ -189,7 +189,7 @@ namespace MDC.Escudeiro.Exercicio.Console.Teste
                 .Setup(x => x.InputValue("Insira o número: "))
                 .Returns("3");
 
-            Assert.Equal(3, exercicio.ConsultarNumero());
+            Assert.Equal("3", exercicio.ConsultarNumero());
         }
     }
 }

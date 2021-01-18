@@ -1,11 +1,11 @@
-﻿using MDC.Escudeiro.Domain.Abstract;
+﻿using MDC.Escudeiro.Domain.Builders;
 using MDC.Escudeiro.Domain.Interfaces;
 using MDC.Escudeiro.Domain.Models;
 using System;
 
 namespace MDC.Escudeiro.Exercicio.Console
 {
-    public class ExercicioUm : AbstractExercise
+    public class ExercicioUm : ExecicioBase, INodeBuilder
     {
         private decimal _primeiroValor;
         private decimal _segundoValor;
@@ -14,6 +14,20 @@ namespace MDC.Escudeiro.Exercicio.Console
         public ExercicioUm(IScreenCommand screenCommand)
         {
             _screenCommand = screenCommand;
+        }
+
+        public CommandNode Build()
+        {
+            var arvore = new RootCommandNodeBuilder()
+                .SetTitle(Text.Titulo_0)
+                .AddChild(() => _screenCommand.PrintResult(string.Format(Text.Resposta_0_0, Somar())), Text.Pergunta_0_0)
+                .AddChild(() => _screenCommand.PrintResult(string.Format(Text.Resposta_0_1, Subtrair())), Text.Pergunta_0_1)
+                .AddChild(() => _screenCommand.PrintResult(string.Format(Text.Resposta_0_2, Dividir())), Text.Pergunta_0_2)
+                .AddChild(() => _screenCommand.PrintResult(string.Format(Text.Resposta_0_3, Multiplicar())), Text.Pergunta_0_3)
+                .AddChild(() => _screenCommand.PrintResult(Classificar()), Text.Pergunta_0_4)
+                .Build();
+
+            return arvore;
         }
 
         public decimal Somar()
@@ -46,24 +60,6 @@ namespace MDC.Escudeiro.Exercicio.Console
             return string.Format(Text.Resposta_0_4, _primeiroValor, TipoValor(_primeiroValor), _segundoValor, TipoValor(_segundoValor));
         }
 
-        public override CommandNode[] GetBranches(CommandNode parent)
-        {
-            var commands = new CommandNode[5];
-
-            for (int i = 0; i < commands.Length; i++)
-            {
-                commands[i] = new CommandNode
-                {
-                    Action = GetActions(i),
-                    Order = i,
-                    Parent = parent,
-                    Title = Text.ResourceManager.GetString($"Pergunta-0-{i}"),
-                };
-            }
-
-            return commands;
-        }
-
         private string TipoValor(decimal valor) => valor % 2 == 0 ? "é par" : "é ímpar";
 
         private void ReceberValores()
@@ -73,19 +69,6 @@ namespace MDC.Escudeiro.Exercicio.Console
 
             _primeiroValor = Convert.ToDecimal(primeiroValor, GetNumberFormatInfo(primeiroValor));
             _segundoValor = Convert.ToDecimal(segundoValor, GetNumberFormatInfo(segundoValor));
-        }
-
-        private Action GetActions(int index)
-        {
-            return index switch
-            {
-                0 => () => _screenCommand.PrintResult(string.Format(Text.Resposta_0_0, Somar())),
-                1 => () => _screenCommand.PrintResult(string.Format(Text.Resposta_0_1, Subtrair())),
-                2 => () => _screenCommand.PrintResult(string.Format(Text.Resposta_0_2, Dividir())),
-                3 => () => _screenCommand.PrintResult(string.Format(Text.Resposta_0_3, Multiplicar())),
-                4 => () => _screenCommand.PrintResult(Classificar()),
-                _ => default,
-            };
         }
     }
 }

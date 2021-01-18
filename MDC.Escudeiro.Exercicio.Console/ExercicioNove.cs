@@ -1,4 +1,4 @@
-﻿using MDC.Escudeiro.Domain.Abstract;
+﻿using MDC.Escudeiro.Domain.Builders;
 using MDC.Escudeiro.Domain.Interfaces;
 using MDC.Escudeiro.Domain.Models;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace MDC.Escudeiro.Exercicio.Console
 {
-    public class ExercicioNove : AbstractExercise
+    public class ExercicioNove : ExecicioBase, INodeBuilder
     {
         private readonly IScreenCommand _screenCommand;
         private readonly List<int> _numeros = new List<int>();
@@ -16,6 +16,42 @@ namespace MDC.Escudeiro.Exercicio.Console
         public ExercicioNove(IScreenCommand screenCommand)
         {
             _screenCommand = screenCommand;
+        }
+
+        public CommandNode Build()
+        {
+            var arvore = new RootCommandNodeBuilder()
+                .SetTitle(Text.Titulo_8)
+                .AddChild(ValidateAction(() => ImprimirTodos()), Text.Pergunta_8_0)
+                .AddChild(ValidateAction(() => _screenCommand.PrintBigText(string.Format(Text.Resposta_8_1, ObterOrdemCrescente()))), Text.Pergunta_8_1)
+                .AddChild(ValidateAction(() => _screenCommand.PrintBigText(string.Format(Text.Resposta_8_2, ObterOrdemDecrescente()))), Text.Pergunta_8_2)
+                .AddChild(ValidateAction(() => _screenCommand.PrintBigText(string.Format(Text.Resposta_8_3, ObterPrimeiroNumero()))), Text.Pergunta_8_3)
+                .AddChild(ValidateAction(() => _screenCommand.PrintResult(string.Format(Text.Resposta_8_4, ObterUltimoNumero()))), Text.Pergunta_8_4)
+                .AddChild(() =>
+                {
+                    InserirNoComeco();
+                    ImprimirTodos();
+                }, Text.Pergunta_8_5)
+                .AddChild(() =>
+                {
+                    InserirNoFim();
+                    ImprimirTodos();
+                }, Text.Pergunta_8_6)
+                .AddChild(() =>
+                {
+                    RemoverPrimeiro();
+                    ImprimirTodos();
+                }, Text.Pergunta_8_7)
+                .AddChild(() =>
+                {
+                    RemoverUltimo();
+                    ImprimirTodos();
+                }, Text.Pergunta_8_8)
+                .AddChild(ValidateAction(() => _screenCommand.PrintBigText(string.Format(Text.Resposta_8_9, ObterNumerosPares()))), Text.Pergunta_8_9)
+                .AddChild(ValidateAction(() => _screenCommand.PrintResult(string.Format(Text.Resposta_8_10, ConsultarNumero()))), Text.Pergunta_8_10)
+                .Build();
+
+            return arvore;
         }
 
         public void ImprimirTodos()
@@ -69,37 +105,31 @@ namespace MDC.Escudeiro.Exercicio.Console
 
         public string ObterNumerosPares()
         {
-            return string.Join(" | ", _numeros.Where(n => n % 2 == 0).ToArray());
+            var pares = string.Join(" | ", _numeros.Where(n => n % 2 == 0).ToArray());
+
+            if (string.IsNullOrEmpty(pares))
+            {
+                return Text.ParesNaoEncontrados;
+            }
+
+            return pares;
         }
 
-        public int ConsultarNumero()
+        public string ConsultarNumero()
         {
             ReceberValores();
 
-            return _numeros.FirstOrDefault(n => n == _numero);
+            if (_numeros.Contains(_numero))
+            {
+                return _numero.ToString();
+            }
+
+            return Text.NumeroNaoEncontrado;
         }
 
         public int[] ObterTodos()
         {
             return _numeros.ToArray();
-        }
-
-        public override CommandNode[] GetBranches(CommandNode parent)
-        {
-            var commands = new CommandNode[11];
-
-            for (int i = 0; i < commands.Length; i++)
-            {
-                commands[i] = new CommandNode
-                {
-                    Action = GetActions(i),
-                    Order = i,
-                    Parent = parent,
-                    Title = Text.ResourceManager.GetString($"Pergunta-8-{i}"),
-                };
-            }
-
-            return commands;
         }
 
         private Action ValidateAction(Action action)
@@ -122,45 +152,6 @@ namespace MDC.Escudeiro.Exercicio.Console
             var numero = _screenCommand.InputValue(Text.InserirNumero);
 
             _numero = Convert.ToInt32(numero, GetNumberFormatInfo(numero));
-        }
-
-        private Action GetActions(int index)
-        {
-            return index switch
-            {
-                0 => ValidateAction(() => ImprimirTodos()),
-                1 => ValidateAction(() => _screenCommand.PrintBigText(string.Format(Text.Resposta_8_1, ObterOrdemCrescente()))),
-                2 => ValidateAction(() => _screenCommand.PrintBigText(string.Format(Text.Resposta_8_2, ObterOrdemDecrescente()))),
-                3 => ValidateAction(() => _screenCommand.PrintBigText(string.Format(Text.Resposta_8_3, ObterPrimeiroNumero()))),
-                4 => ValidateAction(() => _screenCommand.PrintResult(string.Format(Text.Resposta_8_4, ObterUltimoNumero()))),
-                5 => () =>
-                {
-                    InserirNoComeco();
-                    ImprimirTodos();
-                }
-                ,
-                6 => () =>
-                {
-                    InserirNoFim();
-                    ImprimirTodos();
-                }
-                ,
-                7 => () =>
-                {
-                    RemoverPrimeiro();
-                    ImprimirTodos();
-                }
-                ,
-                8 => () =>
-                {
-                    RemoverUltimo();
-                    ImprimirTodos();
-                }
-                ,
-                9 => ValidateAction(() => _screenCommand.PrintBigText(string.Format(Text.Resposta_8_9, ObterNumerosPares()))),
-                10 => ValidateAction(() => _screenCommand.PrintResult(string.Format(Text.Resposta_8_10, ConsultarNumero()))),
-                _ => default,
-            };
         }
     }
 }

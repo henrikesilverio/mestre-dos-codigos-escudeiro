@@ -117,106 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ContaCorrente" xml:space="preserve">
-    <value>Conta Corrente</value>
-  </data>
-  <data name="ContaEspecial" xml:space="preserve">
-    <value>Conta Especial</value>
-  </data>
-  <data name="ContaNaoCriada" xml:space="preserve">
-    <value>A conta não foi criada.</value>
-  </data>
-  <data name="ControleNaoCriado" xml:space="preserve">
-    <value>O controle não foi criado.</value>
-  </data>
-  <data name="InserirAltura" xml:space="preserve">
-    <value>Insira a altura: </value>
-  </data>
-  <data name="InserirCanal" xml:space="preserve">
-    <value>Insira o número do canal: </value>
-  </data>
-  <data name="InserirData" xml:space="preserve">
-    <value>Insira a data de nascimento (dd/MM/yyyy): </value>
-  </data>
-  <data name="InserirLimite" xml:space="preserve">
-    <value>Insira o limite: </value>
-  </data>
-  <data name="InserirNome" xml:space="preserve">
-    <value>Insira o nome: </value>
-  </data>
-  <data name="InserirNumeroConta" xml:space="preserve">
-    <value>Insira o número da conta: </value>
-  </data>
-  <data name="InserirSaldo" xml:space="preserve">
-    <value>Insira o saldo inicial: </value>
-  </data>
-  <data name="InserirTaxaOperacao" xml:space="preserve">
-    <value>Insira a taxa de operação (0 a 100): </value>
-  </data>
-  <data name="InserirTipoConta" xml:space="preserve">
-    <value>Insira o tipo da conta: </value>
-  </data>
-  <data name="InserirTipoControle" xml:space="preserve">
-    <value>Insira o tipo do controle: </value>
-  </data>
-  <data name="InserirValor" xml:space="preserve">
-    <value>Insira o valor: </value>
-  </data>
-  <data name="Pergunta-1-0" xml:space="preserve">
-    <value>({0}) Incluir a pessoa</value>
-  </data>
-  <data name="Pergunta-1-1" xml:space="preserve">
-    <value>({0}) Calcular a idade</value>
-  </data>
-  <data name="Pergunta-1-2" xml:space="preserve">
-    <value>({0}) Imprimir dados</value>
-  </data>
-  <data name="Pergunta-2-0" xml:space="preserve">
-    <value>({0}) Criar uma conta</value>
-  </data>
-  <data name="Pergunta-2-1" xml:space="preserve">
-    <value>({0}) Depositar</value>
-  </data>
-  <data name="Pergunta-2-2" xml:space="preserve">
-    <value>({0}) Sacar</value>
-  </data>
-  <data name="Pergunta-3-0" xml:space="preserve">
-    <value>({0}) Criar controle</value>
-  </data>
-  <data name="Pergunta-3-1" xml:space="preserve">
-    <value>({0}) Aumentar volume</value>
-  </data>
-  <data name="Pergunta-3-2" xml:space="preserve">
-    <value>({0}) Diminuir volume</value>
-  </data>
-  <data name="Pergunta-3-3" xml:space="preserve">
-    <value>({0}) Aumentar número canal</value>
-  </data>
-  <data name="Pergunta-3-4" xml:space="preserve">
-    <value>({0}) Diminuir número canal</value>
-  </data>
-  <data name="Pergunta-3-5" xml:space="preserve">
-    <value>({0}) Ir para o canal</value>
-  </data>
-  <data name="Resposta-1-0" xml:space="preserve">
-    <value>A idade é: {0}</value>
-  </data>
-  <data name="TaxaDeOperacao" xml:space="preserve">
-    <value>Taxa de operação: {0}</value>
-  </data>
-  <data name="TipoConta" xml:space="preserve">
-    <value>Tipo de conta (0) - Corrente | (1) - Especial</value>
-  </data>
-  <data name="TipoControle" xml:space="preserve">
-    <value>Tipo de controle (0) - Direto na TV | (1) - Remoto</value>
+  <data name="Titulo" xml:space="preserve">
+    <value>Bem-vindo ao território de .Net do Mestre dos Códigos.</value>
   </data>
   <data name="Titulo-0" xml:space="preserve">
-    <value>({0}) Crie uma classe para representar uma pessoa.</value>
+    <value>({0}) Respostas sobre a parte teóricas.</value>
   </data>
   <data name="Titulo-1" xml:space="preserve">
-    <value>({0}) Faça uma aplicação bancária.</value>
+    <value>({0}) Validar os exercícios de console.</value>
   </data>
   <data name="Titulo-2" xml:space="preserve">
-    <value>({0}) Crie uma classe Televisao e uma classe ControleRemoto que pode controlar o volume e trocar os canais da televisão.</value>
+    <value>({0}) Validar os exercícios de POO.</value>
   </data>
 </root>

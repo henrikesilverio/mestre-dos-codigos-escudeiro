@@ -2,7 +2,7 @@
 using Moq;
 using Xunit;
 
-namespace MDC.Escudeiro.Exercicio.Console.Teste
+namespace MDC.Escudeiro.Exercicio.Console.Teste.Exercicios
 {
     [Trait("Faça uma aplicação ler N valores decimais, imprima os valores em ordem crescente e decrescente", "todos")]
     public class ExercicioOitoTeste

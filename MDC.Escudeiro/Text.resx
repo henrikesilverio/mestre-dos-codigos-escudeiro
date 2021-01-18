@@ -117,48 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="00" xml:space="preserve">
-    <value>({0}) Perguntas teóricas sobre C#</value>
-  </data>
-  <data name="01" xml:space="preserve">
-    <value>({0}) Perguntas teóricas sobre POO</value>
-  </data>
-  <data name="10" xml:space="preserve">
-    <value>({0}) Crie uma aplicação que receba os valores A e B. Mostre de forma simples, como utilizar variáveis e manipular dados.</value>
-  </data>
-  <data name="11" xml:space="preserve">
-    <value>({0}) Crie uma aplicação que receba nome e salário de N funcionários. Utilize a repetição for e while.</value>
-  </data>
-  <data name="12" xml:space="preserve">
-    <value>({0}) Crie uma aplicação que imprima todos os múltiplos de 3, entre 1 e 100. Utilize a repetição while.</value>
-  </data>
-  <data name="13" xml:space="preserve">
-    <value>({0}) Crie uma aplicação que receba N alunos com suas respectivas notas. Use foreach para a estrutura de repetição.</value>
-  </data>
-  <data name="14" xml:space="preserve">
-    <value>({0}) Crie uma aplicação que calcule a fórmula de Bhaskara.</value>
-  </data>
-  <data name="15" xml:space="preserve">
-    <value>({0}) Crie uma aplicação que demonstre a diferença entre REF e OUT.</value>
-  </data>
-  <data name="16" xml:space="preserve">
-    <value>({0}) Crie uma aplicação que leia 4 números inteiros e calcular a soma dos que forem pares.</value>
-  </data>
-  <data name="17" xml:space="preserve">
-    <value>({0}) Crie uma aplicação que leia N valores decimais, imprima os valores em ordem crescente e decrescente.</value>
-  </data>
-  <data name="18" xml:space="preserve">
-    <value>({0}) Utilizando a biblioteca LINQ crie no console e execute</value>
-  </data>
-  <data name="20" xml:space="preserve">
-    <value>({0}) Crie uma classe para representar uma pessoa</value>
-  </data>
-  <data name="21" xml:space="preserve">
-    <value>({0}) Faça uma aplicação bancária</value>
-  </data>
-  <data name="22" xml:space="preserve">
-    <value>({0}) Crie uma classe Televisao e uma classe ControleRemoto que pode controlar o volume e trocar os canais da televisão.</value>
-  </data>
   <data name="IntroducaoOpcoes" xml:space="preserve">
     <value>Escolha uma opção</value>
   </data>
@@ -170,17 +128,5 @@
   </data>
   <data name="MenuIntroducaoVoltar" xml:space="preserve">
     <value>Precione ← para voltar | Precione Esc para sair</value>
-  </data>
-  <data name="Saudacoes" xml:space="preserve">
-    <value>Bem-vindo ao território de .Net do Mestre dos Códigos</value>
-  </data>
-  <data name="Titulo-0" xml:space="preserve">
-    <value>({0}) Respostas sobre a parte teóricas</value>
-  </data>
-  <data name="Titulo-1" xml:space="preserve">
-    <value>({0}) Validar os exercícios de console</value>
-  </data>
-  <data name="Titulo-2" xml:space="preserve">
-    <value>({0}) Validar os exercícios de POO</value>
   </data>
 </root>

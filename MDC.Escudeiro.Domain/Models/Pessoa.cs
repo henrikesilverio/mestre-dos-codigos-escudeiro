@@ -36,14 +36,20 @@ namespace MDC.Escudeiro.Domain.Models
 
         public int CalcularIdade()
         {
-            var diferencaEmAnos = DateTime.Now.Year - DataNascimento.Year;
+            var dataAtual = DateTime.Now;
+            var diferencaEmAnos = dataAtual.Year - DataNascimento.Year;
 
             if (diferencaEmAnos <= 0)
             {
                 return 0;
             }
 
-            return diferencaEmAnos;
+            if (DataNascimento.Month <= dataAtual.Month && DataNascimento.Day <= dataAtual.Day)
+            {
+                return diferencaEmAnos;
+            }
+
+            return diferencaEmAnos - 1;
         }
     }
 }

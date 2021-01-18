@@ -1,4 +1,4 @@
-﻿using MDC.Escudeiro.Domain.Abstract;
+﻿using MDC.Escudeiro.Domain.Builders;
 using MDC.Escudeiro.Domain.Interfaces;
 using MDC.Escudeiro.Domain.Models;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace MDC.Escudeiro.Exercicio.Console
 {
-    public class ExercicioDois : AbstractExercise
+    public class ExercicioDois : ExecicioBase, INodeBuilder
     {
         private readonly IScreenCommand _screenCommand;
         private readonly List<Funcionario> _funcionarios = new List<Funcionario>();
@@ -16,6 +16,22 @@ namespace MDC.Escudeiro.Exercicio.Console
         public ExercicioDois(IScreenCommand screenCommand)
         {
             _screenCommand = screenCommand;
+        }
+
+        public CommandNode Build()
+        {
+            var arvore = new RootCommandNodeBuilder()
+                .SetTitle(Text.Titulo_1)
+                .AddChild(() =>
+                {
+                    var funcionario = InserirFuncionario();
+                    _screenCommand.PrintResult(string.Format(Text.Resposta_1_0, funcionario.Nome, funcionario.Salario));
+                }, Text.Pergunta_1_0)
+                .AddChild(() => _screenCommand.PrintResult(string.Format(Text.Resposta_1_1, MaiorSalario())), Text.Pergunta_1_1)
+                .AddChild(() => _screenCommand.PrintResult(string.Format(Text.Resposta_1_2, MenorSalario())), Text.Pergunta_1_2)
+                .Build();
+
+            return arvore;
         }
 
         public Funcionario InserirFuncionario()
@@ -63,24 +79,6 @@ namespace MDC.Escudeiro.Exercicio.Console
             return menor;
         }
 
-        public override CommandNode[] GetBranches(CommandNode parent)
-        {
-            var commands = new CommandNode[3];
-
-            for (int i = 0; i < commands.Length; i++)
-            {
-                commands[i] = new CommandNode
-                {
-                    Action = GetActions(i),
-                    Order = i,
-                    Parent = parent,
-                    Title = Text.ResourceManager.GetString($"Pergunta-1-{i}"),
-                };
-            }
-
-            return commands;
-        }
-
         private void ReceberValores()
         {
             var nome = _screenCommand.InputValue(Text.InserirNome);
@@ -90,22 +88,6 @@ namespace MDC.Escudeiro.Exercicio.Console
             {
                 Nome = nome,
                 Salario = Convert.ToDecimal(salario, GetNumberFormatInfo(salario))
-            };
-        }
-
-        private Action GetActions(int index)
-        {
-            return index switch
-            {
-                0 => () =>
-                {
-                    var funcionario = InserirFuncionario();
-                    _screenCommand.PrintResult(string.Format(Text.Resposta_1_0, funcionario.Nome, funcionario.Salario));
-                }
-                ,
-                1 => () => _screenCommand.PrintResult(string.Format(Text.Resposta_1_1, MaiorSalario())),
-                2 => () => _screenCommand.PrintResult(string.Format(Text.Resposta_1_2, MenorSalario())),
-                _ => default,
             };
         }
     }

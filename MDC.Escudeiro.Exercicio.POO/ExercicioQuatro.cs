@@ -1,4 +1,5 @@
 ﻿using MDC.Escudeiro.Domain.Abstract;
+using MDC.Escudeiro.Domain.Builders;
 using MDC.Escudeiro.Domain.Interfaces;
 using MDC.Escudeiro.Domain.Models;
 using System;
@@ -6,7 +7,7 @@ using System.Linq.Expressions;
 
 namespace MDC.Escudeiro.Exercicio.POO
 {
-    public class ExercicioQuatro : AbstractExercise
+    public class ExercicioQuatro : ExecicioBase, INodeBuilder
     {
         private readonly IScreenCommand _screenCommand;
         private readonly Televisao _televisao;
@@ -17,6 +18,21 @@ namespace MDC.Escudeiro.Exercicio.POO
         {
             _screenCommand = screenCommand;
             _televisao = new Televisao();
+        }
+
+        public CommandNode Build()
+        {
+            var arvore = new RootCommandNodeBuilder()
+                .SetTitle(Text.Titulo_2)
+                .AddChild(() => CriarControle(), Text.Pergunta_3_0)
+                .AddChild(() => AumentarVolume(), Text.Pergunta_3_1)
+                .AddChild(() => DiminuirVolume(), Text.Pergunta_3_2)
+                .AddChild(() => IncrementarCanal(), Text.Pergunta_3_3)
+                .AddChild(() => DecrementarCanal(), Text.Pergunta_3_4)
+                .AddChild(() => IrParaCanal(), Text.Pergunta_3_5)
+                .Build();
+
+            return arvore;
         }
 
         public Televisao ObterTelevisao()
@@ -68,24 +84,6 @@ namespace MDC.Escudeiro.Exercicio.POO
             ImprimirDados();
         }
 
-        public override CommandNode[] GetBranches(CommandNode parent)
-        {
-            var commands = new CommandNode[6];
-
-            for (int i = 0; i < commands.Length; i++)
-            {
-                commands[i] = new CommandNode
-                {
-                    Action = GetActions(i),
-                    Order = i,
-                    Parent = parent,
-                    Title = Text.ResourceManager.GetString($"Pergunta-3-{i}"),
-                };
-            }
-
-            return commands;
-        }
-
         private void ExecutarOperacao(Expression<Func<ControleAbstract, Action>> expressao)
         {
             if (_controle == null)
@@ -126,20 +124,6 @@ namespace MDC.Escudeiro.Exercicio.POO
         private void ImprimirDados()
         {
             _screenCommand.PrintResult(_televisao.MostrarDados());
-        }
-
-        private Action GetActions(int index)
-        {
-            return index switch
-            {
-                0 => () => CriarControle(),
-                1 => () => AumentarVolume(),
-                2 => () => DiminuirVolume(),
-                3 => () => IncrementarCanal(),
-                4 => () => DecrementarCanal(),
-                5 => () => IrParaCanal(),
-                _ => default,
-            };
         }
     }
 }

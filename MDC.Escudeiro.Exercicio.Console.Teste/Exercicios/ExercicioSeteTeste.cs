@@ -2,7 +2,7 @@
 using Moq;
 using Xunit;
 
-namespace MDC.Escudeiro.Exercicio.Console.Teste
+namespace MDC.Escudeiro.Exercicio.Console.Teste.Exercicios
 {
     [Trait("Faça uma aplicação ler 4 números inteiros e calcular a soma dos que forem pares", "todos")]
     public class ExercicioSeteTeste

@@ -2,7 +2,7 @@
 using Moq;
 using Xunit;
 
-namespace MDC.Escudeiro.Exercicio.Console.Teste
+namespace MDC.Escudeiro.Exercicio.Console.Teste.Exercicios
 {
     [Trait("Crie uma aplicação que calcule a fórmula de Bhaskara", "todos")]
     public class ExercicioCincoTeste

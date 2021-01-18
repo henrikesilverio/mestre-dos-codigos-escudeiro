@@ -1,5 +1,5 @@
-﻿using MDC.Escudeiro.Domain.Interfaces;
-using MDC.Escudeiro.Domain.Models;
+﻿using MDC.Escudeiro.Domain.Models;
+using MDC.Escudeiro.Exercicio.Builders;
 using System;
 using System.Linq;
 using System.Text;
@@ -8,13 +8,11 @@ namespace MDC.Escudeiro
 {
     public class Program
     {
-        private static int _numberOptions = 3;
+        private static int _numberOptions;
         private static int _selectedOption = 0;
         private static ConsoleColor _selectedOptionColor = ConsoleColor.Cyan;
         private static CommandNode _currentCommandNode;
-        private static readonly ExerciseTheoreticalFactory _exerciseTheoreticalFactory = new ExerciseTheoreticalFactory();
-        private static readonly ExerciseConsoleFactory _exerciseConsoleFactory = new ExerciseConsoleFactory();
-        private static readonly ExercisePOOFactory _exercisePOOFactory = new ExercisePOOFactory();
+        private static readonly ScreenCommandConsole _screenCommand = new ScreenCommandConsole();
 
         public static void Main(string[] args)
         {
@@ -24,7 +22,7 @@ namespace MDC.Escudeiro
             Console.WindowHeight = 30;
             Console.SetWindowSize(Console.WindowWidth, Console.WindowHeight);
 
-            _currentCommandNode = BuildTreeCommand();
+            _currentCommandNode = new ExerciseTreeBuilder(_screenCommand).Build();
 
             PrintScreen();
 
@@ -70,55 +68,6 @@ namespace MDC.Escudeiro
             }
         }
 
-        private static CommandNode BuildTreeCommand()
-        {
-            var node = new CommandNode
-            {
-                Action = ActionBranchTitle,
-                Parent = null,
-                Title = Text.Saudacoes
-            };
-
-            node.Branches = new CommandNode[]
-            {
-                BuildCommandNodeExercise(0, node, _exerciseTheoreticalFactory),
-                BuildCommandNodeExercise(1, node, _exerciseConsoleFactory),
-                BuildCommandNodeExercise(2, node, _exercisePOOFactory)
-            };
-
-            return node;
-        }
-
-        private static CommandNode BuildCommandNodeExercise(int order, CommandNode parent, IExerciseFactory exerciseFactory)
-        {
-            var size = exerciseFactory.Size;
-            var node = new CommandNode
-            {
-                Action = ActionBranchTitle,
-                Branches = new CommandNode[size],
-                Parent = parent,
-                Title = Text.ResourceManager.GetString($"Titulo-{order}"),
-                Order = order
-            };
-
-            for (int i = 0; i < size; i++)
-            {
-                var branch = new CommandNode
-                {
-                    Action = ActionBranchTitle,
-                    Parent = node,
-                    Order = i
-                };
-
-                branch.Title = Text.ResourceManager.GetString($"{order}{branch.Order}");
-                node.Branches[i] = branch;
-                var exercise = exerciseFactory.Manufacture(node.Branches[i].Order);
-                branch.Branches = exercise.GetBranches(node.Branches[i]);
-            }
-
-            return node;
-        }
-
         private static void PrintScreen()
         {
             var footerText = Text.MenuIntroducao;
@@ -132,9 +81,13 @@ namespace MDC.Escudeiro
             if (_currentCommandNode.Branches != null && _currentCommandNode.Branches.Any())
             {
                 WriteWithFixedSide(Text.IntroducaoOpcoes, ConsoleColor.White);
+                ActionBranchTitle();
             }
 
-            _currentCommandNode.Action();
+            if (_currentCommandNode.Action != null)
+            {
+                _currentCommandNode.Action();
+            }
 
             if (_currentCommandNode.Branches == null)
             {

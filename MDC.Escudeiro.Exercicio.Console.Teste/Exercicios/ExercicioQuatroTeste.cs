@@ -2,7 +2,7 @@
 using Moq;
 using Xunit;
 
-namespace MDC.Escudeiro.Exercicio.Console.Teste
+namespace MDC.Escudeiro.Exercicio.Console.Teste.Exercicios
 {
     [Trait("Faça uma aplicação que receba N alunos com suas respectivas notas. Use foreach para a estrutura de repetição", "todos")]
     public class ExercicioQuatroTeste

@@ -1,16 +1,26 @@
-﻿using MDC.Escudeiro.Domain.Abstract;
+﻿using MDC.Escudeiro.Domain.Builders;
 using MDC.Escudeiro.Domain.Interfaces;
 using MDC.Escudeiro.Domain.Models;
 
 namespace MDC.Escudeiro.Exercicio.Console
 {
-    public class ExercicioTres : AbstractExercise
+    public class ExercicioTres : ExecicioBase, INodeBuilder
     {
         private readonly IScreenCommand _screenCommand;
 
         public ExercicioTres(IScreenCommand screenCommand)
         {
             _screenCommand = screenCommand;
+        }
+
+        public CommandNode Build()
+        {
+            var arvore = new RootCommandNodeBuilder()
+                .SetTitle(Text.Titulo_2)
+                .AddChild(MultiplosTres, Text.Pergunta_2_0)
+                .Build();
+
+            return arvore;
         }
 
         public void MultiplosTres()
@@ -22,22 +32,6 @@ namespace MDC.Escudeiro.Exercicio.Console
                     _screenCommand.PrintResult(string.Format(Text.Resposta_2_0, i));
                 }
             }
-        }
-
-        public override CommandNode[] GetBranches(CommandNode parent)
-        {
-            var commands = new CommandNode[]
-            {
-                new CommandNode
-                {
-                    Action = MultiplosTres,
-                    Parent = parent,
-                    Order = 0,
-                    Title = Text.Pergunta_2_0
-                }
-            };
-
-            return commands;
         }
     }
 }

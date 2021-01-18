@@ -2,7 +2,7 @@
 using Moq;
 using Xunit;
 
-namespace MDC.Escudeiro.Exercicio.Console.Teste
+namespace MDC.Escudeiro.Exercicio.Console.Teste.Exercicios
 {
     [Trait("Crie uma aplicação que receba nome e salário de N funcionários. Utilize a repetição for e while", "todos")]
     public class ExercicioDoisTeste

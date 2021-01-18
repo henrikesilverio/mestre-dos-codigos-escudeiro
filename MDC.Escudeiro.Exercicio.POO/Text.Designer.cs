@@ -250,7 +250,7 @@ namespace MDC.Escudeiro.Exercicio.POO {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ({0}) Criar Controle.
+        ///   Looks up a localized string similar to ({0}) Criar controle.
         /// </summary>
         internal static string Pergunta_3_0 {
             get {
@@ -259,7 +259,7 @@ namespace MDC.Escudeiro.Exercicio.POO {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ({0}) Aumentar Volume.
+        ///   Looks up a localized string similar to ({0}) Aumentar volume.
         /// </summary>
         internal static string Pergunta_3_1 {
             get {
@@ -268,7 +268,7 @@ namespace MDC.Escudeiro.Exercicio.POO {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ({0}) Diminuir Volume.
+        ///   Looks up a localized string similar to ({0}) Diminuir volume.
         /// </summary>
         internal static string Pergunta_3_2 {
             get {
@@ -277,7 +277,7 @@ namespace MDC.Escudeiro.Exercicio.POO {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ({0}) Aumentar Número Canal.
+        ///   Looks up a localized string similar to ({0}) Aumentar número canal.
         /// </summary>
         internal static string Pergunta_3_3 {
             get {
@@ -286,7 +286,7 @@ namespace MDC.Escudeiro.Exercicio.POO {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ({0}) Diminuir Número Canal.
+        ///   Looks up a localized string similar to ({0}) Diminuir número canal.
         /// </summary>
         internal static string Pergunta_3_4 {
             get {
@@ -336,6 +336,33 @@ namespace MDC.Escudeiro.Exercicio.POO {
         internal static string TipoControle {
             get {
                 return ResourceManager.GetString("TipoControle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ({0}) Crie uma classe para representar uma pessoa..
+        /// </summary>
+        internal static string Titulo_0 {
+            get {
+                return ResourceManager.GetString("Titulo-0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ({0}) Faça uma aplicação bancária..
+        /// </summary>
+        internal static string Titulo_1 {
+            get {
+                return ResourceManager.GetString("Titulo-1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ({0}) Crie uma classe Televisao e uma classe ControleRemoto que pode controlar o volume e trocar os canais da televisão..
+        /// </summary>
+        internal static string Titulo_2 {
+            get {
+                return ResourceManager.GetString("Titulo-2", resourceCulture);
             }
         }
     }

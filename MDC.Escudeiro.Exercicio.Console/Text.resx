@@ -138,6 +138,12 @@
   <data name="ListaVazia" xml:space="preserve">
     <value>A lista está vazia</value>
   </data>
+  <data name="NumeroNaoEncontrado" xml:space="preserve">
+    <value>O número consultado não foi encontrado.</value>
+  </data>
+  <data name="ParesNaoEncontrados" xml:space="preserve">
+    <value>Os pares não foram encontrados.</value>
+  </data>
   <data name="Pergunta-0-0" xml:space="preserve">
     <value>({0}) Some esses 2 valores</value>
   </data>
@@ -157,19 +163,19 @@
     <value>({0}) Inserir funcionários</value>
   </data>
   <data name="Pergunta-1-1" xml:space="preserve">
-    <value>({0}) Imprima o maior salário</value>
+    <value>({0}) Imprimir o maior salário</value>
   </data>
   <data name="Pergunta-1-2" xml:space="preserve">
-    <value>({0}) Imprima o menor salário</value>
+    <value>({0}) Imprimir o menor salário</value>
   </data>
   <data name="Pergunta-2-0" xml:space="preserve">
-    <value>({0}) Imprima todos os múltiplos de 3</value>
+    <value>({0}) Imprimir todos os múltiplos de 3</value>
   </data>
   <data name="Pergunta-3-0" xml:space="preserve">
     <value>({0}) Inserir aluno</value>
   </data>
   <data name="Pergunta-3-1" xml:space="preserve">
-    <value>({0}) Imprima todos os alunos com média superior a 7</value>
+    <value>({0}) Imprimir todos os alunos com média superior a 7</value>
   </data>
   <data name="Pergunta-4-0" xml:space="preserve">
     <value>({0}) Receba os valores a, b, c</value>
@@ -199,31 +205,31 @@
     <value>({0}) Imprimir todos os números da lista na ordem crescente</value>
   </data>
   <data name="Pergunta-8-10" xml:space="preserve">
-    <value>({0}) Retorne apenas o número informado</value>
+    <value>({0}) Retornar apenas o número informado</value>
   </data>
   <data name="Pergunta-8-2" xml:space="preserve">
     <value>({0}) Imprimir todos os números da lista na ordem decrescente</value>
   </data>
   <data name="Pergunta-8-3" xml:space="preserve">
-    <value>({0}) Imprima apenas o primeiro número da lista</value>
+    <value>({0}) Imprimir apenas o primeiro número da lista</value>
   </data>
   <data name="Pergunta-8-4" xml:space="preserve">
-    <value>({0}) Imprima apenas o ultimo número da lista</value>
+    <value>({0}) Imprimir apenas o ultimo número da lista</value>
   </data>
   <data name="Pergunta-8-5" xml:space="preserve">
-    <value>({0}) Insira um número no início da lista</value>
+    <value>({0}) Inserir um número no início da lista</value>
   </data>
   <data name="Pergunta-8-6" xml:space="preserve">
-    <value>({0}) Insira um número no final da lista</value>
+    <value>({0}) Inserir um número no final da lista</value>
   </data>
   <data name="Pergunta-8-7" xml:space="preserve">
-    <value>({0}) Remova o primeiro número</value>
+    <value>({0}) Remover o primeiro número</value>
   </data>
   <data name="Pergunta-8-8" xml:space="preserve">
-    <value>({0}) Remova o último número</value>
+    <value>({0}) Remover o último número</value>
   </data>
   <data name="Pergunta-8-9" xml:space="preserve">
-    <value>({0}) Retorne apenas os números pares</value>
+    <value>({0}) Retornar apenas os números pares</value>
   </data>
   <data name="Resposta-0-0" xml:space="preserve">
     <value>O valor de A + B = {0}</value>
@@ -288,6 +294,9 @@
   <data name="Resposta-8-1" xml:space="preserve">
     <value>Ordem crescente : {0}</value>
   </data>
+  <data name="Resposta-8-10" xml:space="preserve">
+    <value>Número encontrado é : {0}</value>
+  </data>
   <data name="Resposta-8-2" xml:space="preserve">
     <value>Ordem decrescente : {0}</value>
   </data>
@@ -300,7 +309,31 @@
   <data name="Resposta-8-9" xml:space="preserve">
     <value>Número(s) par(es) {0}</value>
   </data>
-  <data name="Resposta_8_10" xml:space="preserve">
-    <value>Número encontrado é : {0}</value>
+  <data name="Titulo-0" xml:space="preserve">
+    <value>({0}) Crie uma aplicação que receba os valores A e B. Mostre de forma simples, como utilizar variáveis e manipular dados.</value>
+  </data>
+  <data name="Titulo-1" xml:space="preserve">
+    <value>({0}) Crie uma aplicação que receba nome e salário de N funcionários. Utilize a repetição for e while.</value>
+  </data>
+  <data name="Titulo-2" xml:space="preserve">
+    <value>({0}) Crie uma aplicação que imprima todos os múltiplos de 3, entre 1 e 100. Utilize a repetição while.</value>
+  </data>
+  <data name="Titulo-3" xml:space="preserve">
+    <value>({0}) Crie uma aplicação que receba N alunos com suas respectivas notas. Use foreach para a estrutura de repetição.</value>
+  </data>
+  <data name="Titulo-4" xml:space="preserve">
+    <value>({0}) Crie uma aplicação que calcule a fórmula de Bhaskara.</value>
+  </data>
+  <data name="Titulo-5" xml:space="preserve">
+    <value>({0}) Crie uma aplicação que demonstre a diferença entre REF e OUT.</value>
+  </data>
+  <data name="Titulo-6" xml:space="preserve">
+    <value>({0}) Crie uma aplicação que leia 4 números inteiros e calcular a soma dos que forem pares.</value>
+  </data>
+  <data name="Titulo-7" xml:space="preserve">
+    <value>({0}) Crie uma aplicação que leia N valores decimais, imprima os valores em ordem crescente e decrescente.</value>
+  </data>
+  <data name="Titulo-8" xml:space="preserve">
+    <value>({0}) Utilizando a biblioteca LINQ crie no console e execute.</value>
   </data>
 </root>

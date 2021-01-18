@@ -1,11 +1,11 @@
-﻿using MDC.Escudeiro.Domain.Abstract;
+﻿using MDC.Escudeiro.Domain.Builders;
 using MDC.Escudeiro.Domain.Interfaces;
 using MDC.Escudeiro.Domain.Models;
 using System;
 
 namespace MDC.Escudeiro.Exercicio.Console
 {
-    public class ExercicioCinco : AbstractExercise
+    public class ExercicioCinco : ExecicioBase, INodeBuilder
     {
         private readonly IScreenCommand _screenCommand;
         private double _valorA;
@@ -17,6 +17,20 @@ namespace MDC.Escudeiro.Exercicio.Console
             _screenCommand = screenCommand;
         }
 
+        public CommandNode Build()
+        {
+            var arvore = new RootCommandNodeBuilder()
+                .SetTitle(Text.Titulo_4)
+                .AddChild(() =>
+                {
+                    var raizes = CalcularBhaskara();
+                    _screenCommand.PrintResult(string.Format(Text.Resposta_4_0, raizes.Item1, raizes.Item2));
+                }, Text.Pergunta_4_0)
+                .Build();
+
+            return arvore;
+        }
+
         public ValueTuple<double, double> CalcularBhaskara()
         {
             ReceberValores();
@@ -26,26 +40,6 @@ namespace MDC.Escudeiro.Exercicio.Console
             var raizDois = (-_valorB - Math.Sqrt(delta)) / (2 * _valorA);
 
             return (raizUm, raizDois);
-        }
-
-        public override CommandNode[] GetBranches(CommandNode parent)
-        {
-            var commands = new CommandNode[]
-            {
-                new CommandNode
-                {
-                    Action = () =>
-                    {
-                        var raizes = CalcularBhaskara();
-                        _screenCommand.PrintResult(string.Format(Text.Resposta_4_0, raizes.Item1, raizes.Item2));
-                    },
-                    Parent = parent,
-                    Order = 0,
-                    Title = Text.Pergunta_4_0
-                }
-            };
-
-            return commands;
         }
 
         private void ReceberValores()

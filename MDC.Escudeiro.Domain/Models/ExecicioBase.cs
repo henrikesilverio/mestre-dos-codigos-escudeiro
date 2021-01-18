@@ -1,12 +1,9 @@
-﻿using MDC.Escudeiro.Domain.Models;
-using System.Globalization;
+﻿using System.Globalization;
 
-namespace MDC.Escudeiro.Domain.Abstract
+namespace MDC.Escudeiro.Domain.Models
 {
-    public abstract class AbstractExercise
+    public class ExecicioBase
     {
-        public abstract CommandNode[] GetBranches(CommandNode parent);
-
         protected NumberFormatInfo GetNumberFormatInfo(string value)
         {
             var separator = value.Contains(".") ? "." : ",";

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MDC.Escudeiro {
+namespace MDC.Escudeiro.Exercicio {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace MDC.Escudeiro {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MDC.Escudeiro.Text", typeof(Text).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MDC.Escudeiro.Exercicio.Text", typeof(Text).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,38 +61,38 @@ namespace MDC.Escudeiro {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Escolha uma opção.
+        ///   Looks up a localized string similar to Bem-vindo ao território de .Net do Mestre dos Códigos..
         /// </summary>
-        public static string IntroducaoOpcoes {
+        public static string Titulo {
             get {
-                return ResourceManager.GetString("IntroducaoOpcoes", resourceCulture);
+                return ResourceManager.GetString("Titulo", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Precione ↑ e ↓ para selecionar e Enter para escolher | Precione Esc para sair.
+        ///   Looks up a localized string similar to ({0}) Respostas sobre a parte teóricas..
         /// </summary>
-        public static string MenuIntroducao {
+        public static string Titulo_0 {
             get {
-                return ResourceManager.GetString("MenuIntroducao", resourceCulture);
+                return ResourceManager.GetString("Titulo-0", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Precione ↑ e ↓ para selecionar e Enter para escolher | Precione ← para voltar | Precione Esc para sair.
+        ///   Looks up a localized string similar to ({0}) Validar os exercícios de console..
         /// </summary>
-        public static string MenuIntroducaoEntrarVoltar {
+        public static string Titulo_1 {
             get {
-                return ResourceManager.GetString("MenuIntroducaoEntrarVoltar", resourceCulture);
+                return ResourceManager.GetString("Titulo-1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Precione ← para voltar | Precione Esc para sair.
+        ///   Looks up a localized string similar to ({0}) Validar os exercícios de POO..
         /// </summary>
-        public static string MenuIntroducaoVoltar {
+        public static string Titulo_2 {
             get {
-                return ResourceManager.GetString("MenuIntroducaoVoltar", resourceCulture);
+                return ResourceManager.GetString("Titulo-2", resourceCulture);
             }
         }
     }

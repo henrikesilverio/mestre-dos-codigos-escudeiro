@@ -2,7 +2,7 @@ using MDC.Escudeiro.Domain.Interfaces;
 using Moq;
 using Xunit;
 
-namespace MDC.Escudeiro.Exercicio.Console.Teste
+namespace MDC.Escudeiro.Exercicio.Console.Teste.Exercicios
 {
     [Trait("Crie uma aplicação, que receba os valores A e B. Mostre de forma simples, como utilizar variáveis e manipular dados", "todos")]
     public class ExercicioUmTeste
