@@ -124,9 +124,9 @@
     <value>Precione ↑ e ↓ para selecionar e Enter para escolher | Precione Esc para sair</value>
   </data>
   <data name="MenuIntroducaoEntrarVoltar" xml:space="preserve">
-    <value>Precione ↑ e ↓ para selecionar e Enter para escolher | Precione ← para voltar | Precione Esc para sair</value>
+    <value>Precione ↑ e ↓ para selecionar e Enter para escolher | Precione Backspace para voltar | Precione Esc para sair</value>
   </data>
   <data name="MenuIntroducaoVoltar" xml:space="preserve">
-    <value>Precione ← para voltar | Precione Esc para sair</value>
+    <value>Precione Backspace para voltar | Precione Esc para sair</value>
   </data>
 </root>

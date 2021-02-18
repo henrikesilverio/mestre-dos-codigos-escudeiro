@@ -79,7 +79,7 @@ namespace MDC.Escudeiro {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Precione ↑ e ↓ para selecionar e Enter para escolher | Precione ← para voltar | Precione Esc para sair.
+        ///   Looks up a localized string similar to Precione ↑ e ↓ para selecionar e Enter para escolher | Precione Backspace para voltar | Precione Esc para sair.
         /// </summary>
         public static string MenuIntroducaoEntrarVoltar {
             get {
@@ -88,7 +88,7 @@ namespace MDC.Escudeiro {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Precione ← para voltar | Precione Esc para sair.
+        ///   Looks up a localized string similar to Precione Backspace para voltar | Precione Esc para sair.
         /// </summary>
         public static string MenuIntroducaoVoltar {
             get {
