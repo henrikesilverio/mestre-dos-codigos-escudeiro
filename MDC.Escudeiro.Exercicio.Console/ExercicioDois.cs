@@ -13,7 +13,7 @@ namespace MDC.Escudeiro.Exercicio.Console
         private readonly List<Funcionario> _funcionarios = new List<Funcionario>();
         private Funcionario _funcionario;
 
-        public ExercicioDois(IScreenCommand screenCommand)
+        public ExercicioDois(IScreenCommand screenCommand) : base(screenCommand)
         {
             _screenCommand = screenCommand;
         }
@@ -27,8 +27,20 @@ namespace MDC.Escudeiro.Exercicio.Console
                     var funcionario = InserirFuncionario();
                     _screenCommand.PrintResult(string.Format(Text.Resposta_1_0, funcionario.Nome, funcionario.Salario));
                 }, Text.Pergunta_1_0)
-                .AddChild(() => _screenCommand.PrintResult(string.Format(Text.Resposta_1_1, MaiorSalario())), Text.Pergunta_1_1)
-                .AddChild(() => _screenCommand.PrintResult(string.Format(Text.Resposta_1_2, MenorSalario())), Text.Pergunta_1_2)
+                .AddChild(() =>
+                {
+                    ValidateList(_funcionarios, Text.ListaVazia, () =>
+                    {
+                        _screenCommand.PrintResult(string.Format(Text.Resposta_1_1, MaiorSalario()));
+                    });
+                }, Text.Pergunta_1_1)
+                .AddChild(() =>
+                {
+                    ValidateList(_funcionarios, Text.ListaVazia, () =>
+                    {
+                        _screenCommand.PrintResult(string.Format(Text.Resposta_1_2, MenorSalario()));
+                    });
+                }, Text.Pergunta_1_2)
                 .Build();
 
             return arvore;
@@ -66,13 +78,16 @@ namespace MDC.Escudeiro.Exercicio.Console
             if (_funcionarios.Any())
             {
                 menor = _funcionarios[0].Salario;
+                var indice = 0;
 
-                for (int i = 0; i < _funcionarios.Count; i++)
+                while (indice < _funcionarios.Count)
                 {
-                    if (_funcionarios[i].Salario <= menor)
+                    if (_funcionarios[indice].Salario <= menor)
                     {
-                        menor = _funcionarios[i].Salario;
+                        menor = _funcionarios[indice].Salario;
                     }
+
+                    indice++;
                 }
             }
 

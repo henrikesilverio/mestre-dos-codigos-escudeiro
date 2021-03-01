@@ -8,7 +8,7 @@ namespace MDC.Escudeiro.Exercicio.Console
     {
         private readonly IScreenCommand _screenCommand;
 
-        public ExercicioSeis(IScreenCommand screenCommand)
+        public ExercicioSeis(IScreenCommand screenCommand) : base(screenCommand)
         {
             _screenCommand = screenCommand;
         }

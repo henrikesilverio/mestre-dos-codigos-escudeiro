@@ -11,7 +11,7 @@ namespace MDC.Escudeiro.Exercicio.Console
         private decimal _segundoValor;
         private readonly IScreenCommand _screenCommand;
 
-        public ExercicioUm(IScreenCommand screenCommand)
+        public ExercicioUm(IScreenCommand screenCommand) : base(screenCommand)
         {
             _screenCommand = screenCommand;
         }

@@ -13,7 +13,7 @@ namespace MDC.Escudeiro.Exercicio.Console
         private readonly List<int> _numeros = new List<int>();
         private int _numero;
 
-        public ExercicioNove(IScreenCommand screenCommand)
+        public ExercicioNove(IScreenCommand screenCommand) : base(screenCommand)
         {
             _screenCommand = screenCommand;
         }

@@ -10,7 +10,7 @@ namespace MDC.Escudeiro.Exercicio.POO
         private readonly IScreenCommand _screenCommand;
         private Pessoa _pessoa;
 
-        public ExercicioDois(IScreenCommand screenCommand)
+        public ExercicioDois(IScreenCommand screenCommand) : base(screenCommand)
         {
             _screenCommand = screenCommand;
         }

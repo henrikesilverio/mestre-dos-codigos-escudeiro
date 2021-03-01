@@ -13,7 +13,7 @@ namespace MDC.Escudeiro.Exercicio.POO
         private TipoConta _tipoConta;
         private ContaBancariaAbstract _contaBancaria;
 
-        public ExercicioTres(IScreenCommand screenCommand)
+        public ExercicioTres(IScreenCommand screenCommand) : base(screenCommand)
         {
             _screenCommand = screenCommand;
         }

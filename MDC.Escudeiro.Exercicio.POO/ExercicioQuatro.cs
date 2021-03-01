@@ -14,7 +14,7 @@ namespace MDC.Escudeiro.Exercicio.POO
         private ControleAbstract _controle;
         private TipoControle _tipoControle;
 
-        public ExercicioQuatro(IScreenCommand screenCommand)
+        public ExercicioQuatro(IScreenCommand screenCommand) : base(screenCommand)
         {
             _screenCommand = screenCommand;
             _televisao = new Televisao();

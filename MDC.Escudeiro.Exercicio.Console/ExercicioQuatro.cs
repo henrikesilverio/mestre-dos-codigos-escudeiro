@@ -12,7 +12,7 @@ namespace MDC.Escudeiro.Exercicio.Console
         private readonly List<Aluno> _alunos = new List<Aluno>();
         private Aluno _aluno;
 
-        public ExercicioQuatro(IScreenCommand screenCommand)
+        public ExercicioQuatro(IScreenCommand screenCommand) : base(screenCommand)
         {
             _screenCommand = screenCommand;
         }

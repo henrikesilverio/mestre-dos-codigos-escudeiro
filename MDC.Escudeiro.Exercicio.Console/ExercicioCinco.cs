@@ -12,7 +12,7 @@ namespace MDC.Escudeiro.Exercicio.Console
         private double _valorB;
         private double _valorC;
 
-        public ExercicioCinco(IScreenCommand screenCommand)
+        public ExercicioCinco(IScreenCommand screenCommand) : base(screenCommand)
         {
             _screenCommand = screenCommand;
         }

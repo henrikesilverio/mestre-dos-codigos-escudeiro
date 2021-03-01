@@ -11,7 +11,7 @@ namespace MDC.Escudeiro.Exercicio.Console
         private readonly IScreenCommand _screenCommand;
         private readonly int[] _numeros;
 
-        public ExercicioSete(IScreenCommand screenCommand)
+        public ExercicioSete(IScreenCommand screenCommand) : base(screenCommand)
         {
             _screenCommand = screenCommand;
             _numeros = new int[4];

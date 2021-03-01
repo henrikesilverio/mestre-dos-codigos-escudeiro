@@ -13,7 +13,7 @@ namespace MDC.Escudeiro.Exercicio.Console
         private readonly List<decimal> _numeros = new List<decimal>();
         private decimal _numero;
 
-        public ExercicioOito(IScreenCommand screenCommand)
+        public ExercicioOito(IScreenCommand screenCommand) : base(screenCommand)
         {
             _screenCommand = screenCommand;
         }
